@@ -38,7 +38,6 @@ feature 'user updates user info' do
   scenario 'an already authenticated user can change their password' do
     user = FactoryGirl.create(:user)
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
 
     visit root_path
     click_link 'Sign In'

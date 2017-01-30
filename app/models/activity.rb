@@ -1,5 +1,4 @@
 class Activity < ApplicationRecord
-
   belongs_to :zone
 
   validates :name, presence: true

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "User creates an account" do
 
-  #Acceptance Criteria
+  # Acceptance Criteria
     # * Valid email address
     # * Specify and confirm password
     # * Error if above not completed

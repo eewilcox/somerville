@@ -23,7 +23,6 @@ feature "User signs in" do
 
   scenario 'a nonexistent email and password are supplied' do
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
 
     visit root_path
     click_link 'Sign In'

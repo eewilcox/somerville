@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# Visiting the home page, a visitor should see and be able to utilize a drop down selection
+# Visiting the home page, a visitor should see and utilize a drop down selection
 
 feature "visitor can select a zone from a drop down menu" do
   scenario "selects a location and selects the go button" do
