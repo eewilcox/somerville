@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :activity do
-    name 'Bar'
-    address '34 Fun Street, Somerville, MA'
-    description 'The first bar ever built in Somerville'
+    sequence(:name) { |n| "name#{n}" }
+    sequence(:address) { |n| "address#{n}" }
+    sequence(:description) { |n| "description#{n}" }
   end
 end
