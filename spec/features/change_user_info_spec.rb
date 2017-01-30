@@ -19,7 +19,6 @@ feature 'user updates user info' do
   scenario 'an already authenticated user can change their email' do
     user = FactoryGirl.create(:user)
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
 
     visit root_path
     click_link 'Sign In'
@@ -40,7 +39,7 @@ feature 'user updates user info' do
     user = FactoryGirl.create(:user)
     zone = FactoryGirl.create(:zone)
     activity = FactoryGirl.create(:activity, zone: zone)
-    
+
     visit root_path
     click_link 'Sign In'
     fill_in 'Email', with: user.email

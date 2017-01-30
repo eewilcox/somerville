@@ -10,7 +10,6 @@ feature "User signs in" do
   scenario 'an existing user signs in and gains access' do
     user = FactoryGirl.create(:user)
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
 
     visit root_path
     click_link 'Sign In'
@@ -40,7 +39,6 @@ feature "User signs in" do
   scenario 'an existing email with the wrong password is denied access' do
     user = FactoryGirl.create(:user)
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
 
     visit root_path
     click_link 'Sign In'
@@ -56,8 +54,7 @@ feature "User signs in" do
   scenario 'an already authenticated user cannot re-sign in' do
     user = FactoryGirl.create(:user)
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
-    
+
     visit new_user_session_path
 
     fill_in 'Email', with: user.email

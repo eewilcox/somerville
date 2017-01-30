@@ -4,7 +4,6 @@ require 'rails_helper'
 
 feature "visitor can select a zone from a drop down menu" do
   scenario "selects a location and selects the go button" do
-    user = FactoryGirl.create(:user)
     zone = FactoryGirl.create(:zone)
     activity = FactoryGirl.create(:activity, zone: zone)
 

@@ -11,7 +11,6 @@ feature "User creates an account" do
   scenario 'specifying valid and required information' do
     user = FactoryGirl.build(:user)
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
 
     visit root_path
     click_link 'Sign Up'
@@ -30,7 +29,6 @@ feature "User creates an account" do
 
   scenario 'required information is not supplied' do
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
 
     visit root_path
     click_link 'Sign Up'
@@ -42,8 +40,7 @@ feature "User creates an account" do
 
   scenario 'password confirmation does not match confirmation' do
     zone = FactoryGirl.create(:zone)
-    activity = FactoryGirl.create(:activity, zone: zone)
-    
+
     visit root_path
     click_link 'Sign Up'
 
