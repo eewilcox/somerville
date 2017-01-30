@@ -2,11 +2,11 @@ require 'rails_helper'
 
 feature "User creates an account" do
 
-  #Acceptance Criteria
-  # * Valid email address
-  # * Specify and confirm password
-  # * Error if above not completed
-  # * If all required feilds are specified, become an authenticated user
+  #Acceptance Criteria  
+    # * Valid email address
+    # * Specify and confirm password
+    # * Error if above not completed
+    # * If all required feilds are specified, become an authenticated user
 
   scenario 'specifying valid and required information' do
     user = FactoryGirl.build(:user)

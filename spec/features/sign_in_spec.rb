@@ -3,9 +3,9 @@ require 'rails_helper'
 feature "User signs in" do
 
 # Acceptance Criteria
-# * If I specify valid info I am autenticated and gain access to system
-# * If I specify invalid info, I remain unauthenticated
-# * If I am already signed in, I can't sign in again
+  # * If I specify valid info I am autenticated and gain access to system
+  # * If I specify invalid info, I remain unauthenticated
+  # * If I am already signed in, I can't sign in again
 
   scenario 'an existing user signs in and gains access' do
     user = FactoryGirl.create(:user)
