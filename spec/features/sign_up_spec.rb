@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "User creates an account" do
 
-  #Acceptance Criteria  
+  #Acceptance Criteria
     # * Valid email address
     # * Specify and confirm password
     # * Error if above not completed
@@ -10,6 +10,8 @@ feature "User creates an account" do
 
   scenario 'specifying valid and required information' do
     user = FactoryGirl.build(:user)
+    zone = FactoryGirl.create(:zone)
+    activity = FactoryGirl.create(:activity, zone: zone)
 
     visit root_path
     click_link 'Sign Up'
@@ -27,6 +29,9 @@ feature "User creates an account" do
   end
 
   scenario 'required information is not supplied' do
+    zone = FactoryGirl.create(:zone)
+    activity = FactoryGirl.create(:activity, zone: zone)
+
     visit root_path
     click_link 'Sign Up'
     click_button 'Sign up'
@@ -36,6 +41,9 @@ feature "User creates an account" do
   end
 
   scenario 'password confirmation does not match confirmation' do
+    zone = FactoryGirl.create(:zone)
+    activity = FactoryGirl.create(:activity, zone: zone)
+    
     visit root_path
     click_link 'Sign Up'
 

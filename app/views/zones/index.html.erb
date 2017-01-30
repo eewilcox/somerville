@@ -1,0 +1,11 @@
+<h1>Somerville</h1>
+<%= form_for(@zone, method: :get) do |f| %>
+  <div class="field">
+    <%= f.label :name, 'Neighborhoods' %>
+    <%= f.collection_select(:id, @zones, :id, :name) %>
+  </div>
+
+  <div class="actions" >
+    <%= f.submit "Go!"%>
+  </div>
+<% end %>

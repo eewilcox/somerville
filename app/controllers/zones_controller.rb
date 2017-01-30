@@ -1,11 +1,13 @@
 class ZonesController < ApplicationController
 
-  def new
-    @zone = Zone.new
+  def index
+    @zone = Zone.find_by(params[:id])
+    @zones = Zone.all
   end
 
-  def create
-    @zone = Zone.find_by(params[:zone_id])
+  def show
+    @zone = Zone.find(params[:zone][:id])
+    @activity = Activity.where('zone_id=?', @zone.id).sample
   end
 
 end
