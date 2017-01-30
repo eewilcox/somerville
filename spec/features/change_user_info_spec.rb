@@ -8,6 +8,7 @@ feature 'user updates user info' do
 
   scenario 'an unauthenticated user cannot navigate to user edit page' do
     user = FactoryGirl.create(:user)
+
     visit edit_user_registration_path
 
     expect(page).to have_content('You need to sign in or sign up before continuing.')
@@ -17,6 +18,8 @@ feature 'user updates user info' do
 
   scenario 'an already authenticated user can change their email' do
     user = FactoryGirl.create(:user)
+    zone = FactoryGirl.create(:zone)
+
     visit root_path
     click_link 'Sign In'
     fill_in 'Email', with: user.email
@@ -34,6 +37,8 @@ feature 'user updates user info' do
 
   scenario 'an already authenticated user can change their password' do
     user = FactoryGirl.create(:user)
+    zone = FactoryGirl.create(:zone)
+
     visit root_path
     click_link 'Sign In'
     fill_in 'Email', with: user.email
