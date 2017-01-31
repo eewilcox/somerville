@@ -6,9 +6,12 @@ class ZonesController < ApplicationController
   end
 
   def show
-    @zone = Zone.find(params[:zone][:id])
-    array = Activity.where('zone_id=?', @zone.id)
-    @activity = array.sample
+    if params[:zone] == nil
+      @zone = Zone.find(params[:id])
+    else
+      @zone = Zone.find(params[:zone][:name])
+    end
+    @activities = @zone.activities
   end
 
 end
