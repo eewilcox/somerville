@@ -4,8 +4,11 @@ Rails.application.routes.draw do
 
   root "zones#index"
 
-  resources :trips, except: [:show]
 
+  resources :trips, except: [:show] do
+    resources :activities, only: [:index]
+  end
+  
   resources :zones, only: [:index, :show] do
     resources :activities, only: []
   end

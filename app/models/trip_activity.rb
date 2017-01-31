@@ -1,7 +1,7 @@
 class TripActivity < ApplicationRecord
-  belongs_to :trips
-  belongs_to :activities
+  belongs_to :trip
+  belongs_to :activity
 
   validates :trip, presence: true
-  validates :activity, presenece: true
+  validates :activity, presence: true
 end

@@ -11,7 +11,10 @@ class ZonesController < ApplicationController
     else
       @zone = Zone.find(params[:zone][:name])
     end
+
     @activities = @zone.activities
+
+    
   end
 
 end
