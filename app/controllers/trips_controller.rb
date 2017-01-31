@@ -13,7 +13,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     if @trip.save
-      flash[:notice] =  "Trip Created - Enjoy Your Journey!"
+      flash[:notice] =  'Trip Created - Enjoy Your Journey!'
       redirect_to root_path
     else
       flash.now[:notice] = @trip.errors.full_messages
@@ -26,5 +26,4 @@ class TripsController < ApplicationController
   def trip_params
     params.require(:trip).permit(:trip_name)
   end
-
 end

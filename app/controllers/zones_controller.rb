@@ -6,15 +6,12 @@ class ZonesController < ApplicationController
   end
 
   def show
-    if params[:zone] == nil
-      @zone = Zone.find(params[:id])
-    else
+    if params[:zone]
       @zone = Zone.find(params[:zone][:name])
+    else
+      @zone = Zone.find(params[:id])
     end
-
     @activities = @zone.activities
-
-    
   end
 
 end
