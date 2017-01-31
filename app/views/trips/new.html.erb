@@ -1,0 +1,14 @@
+<%= form_for(@trip) do |f| %>
+
+  <div class="field">
+    <%= f.label :trip_name, 'Name Your Trip' %>
+    <%= f.text_field :trip_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Start Trip"%>
+ </div>
+
+<% end %>
+
+<p><%= link_to "Back", root_path %></p>

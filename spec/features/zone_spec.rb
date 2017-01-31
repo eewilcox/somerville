@@ -9,7 +9,7 @@ feature "visitor can select a zone from a drop down menu" do
 
     visit root_path
 
-    select zone.name, from: 'zone_id'
+    select zone.name, from: 'zone_name'
 
     click_button 'Go!'
 
