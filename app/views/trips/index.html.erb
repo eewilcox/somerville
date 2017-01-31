@@ -1,0 +1,8 @@
+<ul>
+  <% @trips.each do |trip| %>
+    <li><%= trip.name %></li>
+    <% trip.each do |destination| %>
+      <li><%= destination.activity.name %></li>
+    <% end %>
+  <% end %>
+</ul>
