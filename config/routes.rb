@@ -11,4 +11,11 @@ Rails.application.routes.draw do
   resources :zones, only: [:index, :show] do
     resources :activities, only: []
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :trips, only: [:index, :create, :update, :destroy]
+    end
+  end
+
 end
