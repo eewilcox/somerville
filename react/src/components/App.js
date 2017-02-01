@@ -95,11 +95,8 @@ class App extends Component {
   }
 
   render() {
+    //
 
-
-
-    // if (this.state.page) {
-    //   show = <Trip />
     // } else {
     //   show = <Button />
     // }
@@ -111,7 +108,6 @@ class App extends Component {
     // } else {
     //   page = <Activ
     // }
-
 
     let trips = this.state.trips.map((trip) => {
       let handleDeleteTrip = () => {
@@ -132,6 +128,14 @@ class App extends Component {
         />
       )
     });
+
+    let show = null;
+    if (this.state.page) {
+      show = <Button />
+    } else {
+      show = trips
+    }
+
     return(
       <div>
         <h1>My Trips</h1>
@@ -139,7 +143,7 @@ class App extends Component {
           <input id="trip-name" type="text" placeholder="New Trip"></input>
           <input onClick={this.handleNewTrip} type="submit"></input>
         </form>
-        {trips}
+        {show}
       </div>
     )
   }
