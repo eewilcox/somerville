@@ -5,21 +5,12 @@ class Button extends Component {
     super(props);
     this.state = {
       activities: [],
-      activityId: null,
     };
-
-    this.handleAdd = this.handleAdd.bind(this);
   }
 
-  handleAdd(event) {
-    event.preventDefault();
-    let id = parseInt(document.getElementById('button').dataset.id);
-    this.setState({ activityId: id});
-  }
-  
   render() {
     return(
-      <div onClick={this.handleAdd}>
+      <div onClick={this.props.handleAdd}>
         <h1>Add to Trip</h1>
       </div>
     );

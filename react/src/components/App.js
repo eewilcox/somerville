@@ -11,12 +11,14 @@ class App extends Component {
       tripName: "",
       userNewId: null,
       activityId: null,
-      page: false,
+      page: true,
     };
     this.getData = this.getData.bind(this);
     this.handleDeleteTrip = this.handleDeleteTrip.bind(this);
     this.handleSelectTrip = this.handleSelectTrip.bind(this);
     this.handleNewTrip = this.handleNewTrip.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleBoolean = this.handleBoolean.bind(this);
   }
 
   getData() {
@@ -41,11 +43,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (document.getElementById('button')) {
-      this.setState({ page: true});
-    }
     this.getData();
   }
+
+  handleBoolean(event) {
+    event.preventDefault();
+    if (this.state.page) {
+      this.setState({ page: false});
+    } else {
+      this.setState({ page: true});
+    }
+  }
+
 
   handleNewTrip(event) {
     event.preventDefault();
@@ -94,20 +103,13 @@ class App extends Component {
       });
   }
 
+  handleAdd(event) {
+    event.preventDefault();
+    let id = parseInt(document.getElementById('button').dataset.id);
+    this.setState({ activityId: id});
+  }
+
   render() {
-    //
-
-    // } else {
-    //   show = <Button />
-    // }
-
-
-    // if they selected trip page, show that, if not, show activities
-    // if(this.state.showTrips) {
-    //   page = <Trips />
-    // } else {
-    //   page = <Activ
-    // }
 
     let trips = this.state.trips.map((trip) => {
       let handleDeleteTrip = () => {
@@ -131,14 +133,16 @@ class App extends Component {
 
     let show = null;
     if (this.state.page) {
-      show = <Button />
+      show = <Button
+              handleAdd={this.handleAdd}
+            />
     } else {
       show = trips
     }
 
     return(
       <div>
-        <h1>My Trips</h1>
+        <h1 onClick={this.handleBoolean}>Help</h1>
         <form>
           <input id="trip-name" type="text" placeholder="New Trip"></input>
           <input onClick={this.handleNewTrip} type="submit"></input>
