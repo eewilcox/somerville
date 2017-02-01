@@ -2,12 +2,14 @@ class Api::V1::TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+
     render json: Trip.all
   end
 
   def create
     trip = Trip.new(trip_params)
     trip.user = current_user
+
     if trip.save!
       render json: trip
     end
@@ -35,6 +37,8 @@ class Api::V1::TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:trip_name)
+    data = JSON.parse(request.body.read)
+    data["trip"]
+    binding.pry
   end
 end

@@ -4,7 +4,7 @@ const Trip = (props) => {
 
   return(
     <div>
-      <p>{props.name}</p>
+      <p onClick={props.handleSelectTrip}>{props.name}</p>
       <button onClick={props.handleDeleteTrip}>Delete</button>
     </div>
   )
