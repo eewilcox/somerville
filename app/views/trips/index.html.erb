@@ -1,11 +1,7 @@
 <div id="app">
-  I will be replaced by react!
+  <ul>
+    <% @trips.each do |trip| %>
+      <li><%= trip.trip_name %></li>
+    <% end %>
+  </ul>
 </div>
-
-
-
-<ul>
-  <% @trips.each do |trip| %>
-    <li><%= trip.trip_name %></li>
-  <% end %>
-</ul>

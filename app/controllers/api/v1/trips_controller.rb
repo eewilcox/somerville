@@ -7,9 +7,11 @@ class Api::V1::TripsController < ApplicationController
   end
 
   def create
-    trip = Trip.new(trip_params)
-    trip.user = current_user
+    data = JSON.parse(request.body.read)
 
+    trip = Trip.new
+    trip.trip_name = data["trip"]["trip_name"]
+    trip.user_id = data["trip"]["user_id"]
     if trip.save!
       render json: trip
     end
@@ -32,13 +34,5 @@ class Api::V1::TripsController < ApplicationController
       @trips = Trip.all
       render json: @trips
     end
-  end
-
-  private
-
-  def trip_params
-    data = JSON.parse(request.body.read)
-    data["trip"]
-    binding.pry
   end
 end

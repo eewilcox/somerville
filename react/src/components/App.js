@@ -59,7 +59,7 @@ class App extends Component {
       .then(function(response) {
         newTrips = response.json();
         return newTrips;
-      }).then((response) => this.handleSelectTrip(this.state.selectedTripId));
+      }).then((response) => this.getData());
     }
 
   handleDeleteTrip(tripId){
