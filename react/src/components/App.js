@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import Trip from './Trip';
+import Button from './Button';
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class App extends Component {
       currentTripId: null,
       tripName: "",
       userNewId: null,
+      activityId: null,
+      page: false,
     };
     this.getData = this.getData.bind(this);
     this.handleDeleteTrip = this.handleDeleteTrip.bind(this);
@@ -38,6 +41,9 @@ class App extends Component {
   }
 
   componentDidMount() {
+    if (document.getElementById('button')) {
+      this.setState({ page: true});
+    }
     this.getData();
   }
 
@@ -89,6 +95,15 @@ class App extends Component {
   }
 
   render() {
+
+
+
+    // if (this.state.page) {
+    //   show = <Trip />
+    // } else {
+    //   show = <Button />
+    // }
+
 
     // if they selected trip page, show that, if not, show activities
     // if(this.state.showTrips) {
