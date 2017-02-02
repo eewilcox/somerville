@@ -1,10 +1,14 @@
+<div id="app"></div>
+
+<div id="activity">
 <% @activity = @activities.sample %>
-<h2><%= @activity.name %></h2>
+<div id="activity-name"><h2><%= @activity.name %></h2></div>
+<div id="activity-address"><h6><%= @activity.address %></h6></div>
+<div id="activity-description"><h5><%= @activity.description %></h5></div>
 
-<div id="button" data-id="<%= @activity.id %>"></div>
+<div id="button" data-id="<%= @activity.id %>">
+  <%= button_to "Next Stop", zone_path(@zone.id), method: :get %>
+</div>
 
-<%= button_to "Next Stop", zone_path(@zone.id), method: :get %>
-
-<div id="app">
 
 </div>

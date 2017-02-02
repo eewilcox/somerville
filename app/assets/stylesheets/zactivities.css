@@ -1,0 +1,42 @@
+h1 {
+  color: white;
+}
+
+#activity {
+  height: 500px;
+  padding: 10px;
+}
+
+#activity-name {
+  padding: 0 40% 0 40%;
+}
+
+#activity-address {
+  padding: 0 40% 0 40%;
+}
+
+#activity-description {
+  padding: 0 40% 0 40%;
+}
+
+#button {
+  padding: 0 40% 0 40%;
+}
+
+#add-activity {
+  background-color: red;
+  padding: 10px 50px;
+}
+
+#trip-name {
+  background-color: blue;
+  padding: 10px 5px;
+  max-width: 20%;
+}
+
+#background-img {
+  background-image: url("/assets/131118_sarma-details_47.jpg");
+  background-size: 1800px;
+  height: 1000px;
+  padding: 5%;
+}
