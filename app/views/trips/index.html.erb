@@ -1,13 +1,12 @@
 <div id="app">
-  <ul>
-    <% @trips.each do |trip| %>
-      <li><%= trip.trip_name %></li>
-    <% end %>
-  </ul>
+
 </div>
 
 <ul>
   <% @trips.each do |trip| %>
-    <li><%= trip.trip_activity %><%= @activity_info %></li>
+    <li><%= trip.trip_name %>
+      <% trip.activities.each do |activity| %>
+      - <%= activity['name'] %>
+    <% end %></li>
   <% end %>
 </ul>

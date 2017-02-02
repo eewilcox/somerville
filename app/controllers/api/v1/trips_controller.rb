@@ -2,7 +2,6 @@ class Api::V1::TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-
     render json: Trip.all
   end
 

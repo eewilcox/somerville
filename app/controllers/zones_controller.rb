@@ -1,5 +1,5 @@
 class ZonesController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index]
   def index
     @zone = Zone.find_by(params[:id])
     @zones = Zone.all

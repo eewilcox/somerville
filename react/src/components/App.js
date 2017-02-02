@@ -10,8 +10,8 @@ class App extends Component {
       tripsData: [],
       currentTripId: null,
       tripName: "",
-      userNewId: null,
-      activityId: null,
+      userNewId: parseInt(document.getElementById('ident').dataset.id),
+      activityId: parseInt(document.getElementById('button').dataset.id),
       page: true,
     };
     this.getData = this.getData.bind(this);
@@ -20,7 +20,6 @@ class App extends Component {
     this.handleNewTrip = this.handleNewTrip.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleBoolean = this.handleBoolean.bind(this);
-    this.handleSelectActivity = this.handleSelectActivity.bind(this);
   }
 
   getData() {
@@ -38,7 +37,6 @@ class App extends Component {
       .then(body => {
         this.setState({
           trips: body,
-          userNewId: body[0]["user_id"]
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -105,12 +103,6 @@ class App extends Component {
       });
   }
 
-  handleSelectActivity(event) {
-    event.preventDefault();
-    let id = parseInt(document.getElementById('button').dataset.id);
-    this.setState({ activityId: id});
-  }
-
   handleAdd(event) {
     event.preventDefault();
     let fetchBody = { activity_id: this.state.activityId,
@@ -124,12 +116,12 @@ class App extends Component {
         newFolders = response.json();
         return newFolders;
       }).then((response) => this.setState({
-        tripData: response
+        tripsData: response
       }));
   }
 
-  render() {
 
+  render() {
     let trips = this.state.trips.map((trip) => {
       let handleDeleteTrip = () => {
         this.handleDeleteTrip(trip.id);
@@ -139,21 +131,20 @@ class App extends Component {
         this.handleSelectTrip(trip.id);
       };
 
-      return (
-        <Trip
-          id={trip.id}
-          key={trip.id}
-          name={trip.trip_name}
-          handleDeleteTrip={handleDeleteTrip}
-          handleSelectTrip={handleSelectTrip}
-        />
-      )
-    });
+        return (
+          <Trip
+            id={trip.id}
+            key={trip.id}
+            name={trip.trip_name}
+            handleDeleteTrip={handleDeleteTrip}
+            handleSelectTrip={handleSelectTrip}
+          />
+        )
+      });
 
     let show = null;
     if (this.state.page) {
       show = <Button
-              handleSelectActivity={this.handleSelectActivity}
               handleAdd={this.handleAdd}
             />
     } else {

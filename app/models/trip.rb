@@ -4,5 +4,6 @@ class Trip < ApplicationRecord
   has_many :activities, through: :trip_activities
 
   validates :trip_name, presence: true
+  validates :trip_name, uniqueness: true
   validates :user, presence: true
 end

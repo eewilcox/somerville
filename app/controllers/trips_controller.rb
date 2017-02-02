@@ -1,12 +1,7 @@
 class TripsController < ApplicationController
-  before_action :authenticate_user!
-
+  
   def index
-    @trips = Trip.all
-    @activity_info = []
-    @trips.each do |trip|
-      @activity_info << TripActivity.where('trip_id =?', trip.id)
-    end
+    @trips = Trip.where(user_id: current_user)
   end
 
   def new
