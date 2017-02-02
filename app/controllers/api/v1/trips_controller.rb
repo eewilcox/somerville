@@ -2,8 +2,7 @@ class Api::V1::TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-
-    render json: Trip.all
+    render json: Trip.where(user_id: current_user)
   end
 
   def create
@@ -18,8 +17,10 @@ class Api::V1::TripsController < ApplicationController
   end
 
   def update
-    trip = Trip.find(params[:id])
-    activity = Activity.find(params[:activity_id])
+    data = JSON.parse(request.body.read)
+    trip = Trip.find(data["trip_id"])
+    activity = Activity.find(data["activity_id"])
+    trip_activity = TripActivity.new
     trip_activity.trip_id = trip.id
     trip_activity.activity_id = activity.id
     if trip_activity.save!

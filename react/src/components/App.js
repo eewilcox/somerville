@@ -7,10 +7,11 @@ class App extends Component {
     super(props);
     this.state = {
       trips: [],
+      tripsData: [],
       currentTripId: null,
       tripName: "",
-      userNewId: null,
-      activityId: null,
+      userNewId: parseInt(document.getElementById('ident').dataset.id),
+      activityId: parseInt(document.getElementById('button').dataset.id),
       page: true,
     };
     this.getData = this.getData.bind(this);
@@ -22,7 +23,9 @@ class App extends Component {
   }
 
   getData() {
-    fetch('/api/v1/trips.json')
+    fetch('/api/v1/trips.json', {
+      credentials: 'same-origin'
+    })
       .then(response => {
         if (response.ok) {
           return response;
@@ -36,7 +39,6 @@ class App extends Component {
       .then(body => {
         this.setState({
           trips: body,
-          userNewId: body[0]["user_id"]
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -105,12 +107,23 @@ class App extends Component {
 
   handleAdd(event) {
     event.preventDefault();
-    let id = parseInt(document.getElementById('button').dataset.id);
-    this.setState({ activityId: id});
+    let fetchBody = { activity_id: this.state.activityId,
+                      trip_id: this.state.currentTripId
+                    };
+    let newFolders = [];
+    fetch(`/api/v1/trips/${this.state.currentTripId}`,
+      { method: "PATCH",
+      body: JSON.stringify(fetchBody) })
+      .then(function(response) {
+        newFolders = response.json();
+        return newFolders;
+      }).then((response) => this.setState({
+        tripsData: response
+      }));
   }
 
-  render() {
 
+  render() {
     let trips = this.state.trips.map((trip) => {
       let handleDeleteTrip = () => {
         this.handleDeleteTrip(trip.id);
@@ -120,16 +133,16 @@ class App extends Component {
         this.handleSelectTrip(trip.id);
       };
 
-      return (
-        <Trip
-          id={trip.id}
-          key={trip.id}
-          name={trip.trip_name}
-          handleDeleteTrip={handleDeleteTrip}
-          handleSelectTrip={handleSelectTrip}
-        />
-      )
-    });
+        return (
+          <Trip
+            id={trip.id}
+            key={trip.id}
+            name={trip.trip_name}
+            handleDeleteTrip={handleDeleteTrip}
+            handleSelectTrip={handleSelectTrip}
+          />
+        )
+      });
 
     let show = null;
     if (this.state.page) {
