@@ -2,7 +2,7 @@ class Api::V1::TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: Trip.all
+    render json: Trip.where(user_id: current_user)
   end
 
   def create

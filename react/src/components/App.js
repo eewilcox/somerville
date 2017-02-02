@@ -23,7 +23,9 @@ class App extends Component {
   }
 
   getData() {
-    fetch('/api/v1/trips.json')
+    fetch('/api/v1/trips.json', {
+      credentials: 'same-origin'
+    })
       .then(response => {
         if (response.ok) {
           return response;
