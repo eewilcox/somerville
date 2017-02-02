@@ -155,7 +155,7 @@ class App extends Component {
 
     return(
       <div>
-        <h1 onClick={this.handleBoolean}>Help</h1>
+        <h4 onClick={this.handleBoolean}>Select Trip</h4>
         <form>
           <input id="trip-name" type="text" placeholder="New Trip"></input>
           <input onClick={this.handleNewTrip} type="submit"></input>
