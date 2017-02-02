@@ -1,5 +1,10 @@
-
 <% @activity = @activities.sample %>
 <h2><%= @activity.name %></h2>
 
+<div id="button" data-id="<%= @activity.id %>"></div>
+
 <%= button_to "Next Stop", zone_path(@zone.id), method: :get %>
+
+<div id="app">
+
+</div>
