@@ -10,8 +10,11 @@ class Button extends Component {
 
   render() {
     return(
-      <div onClick={this.props.handleAdd}>
-        <h1>Add to Trip</h1>
+      <div>
+        <div onClick={this.props.handleSelectActivity}>
+          <h1>Select</h1>
+        </div>
+        <button onClick={this.props.handleAdd}>Add</button>
       </div>
     );
   }

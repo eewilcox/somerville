@@ -7,6 +7,7 @@ class App extends Component {
     super(props);
     this.state = {
       trips: [],
+      tripsData: [],
       currentTripId: null,
       tripName: "",
       userNewId: null,
@@ -19,6 +20,7 @@ class App extends Component {
     this.handleNewTrip = this.handleNewTrip.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleBoolean = this.handleBoolean.bind(this);
+    this.handleSelectActivity = this.handleSelectActivity.bind(this);
   }
 
   getData() {
@@ -103,10 +105,27 @@ class App extends Component {
       });
   }
 
-  handleAdd(event) {
+  handleSelectActivity(event) {
     event.preventDefault();
     let id = parseInt(document.getElementById('button').dataset.id);
     this.setState({ activityId: id});
+  }
+
+  handleAdd(event) {
+    event.preventDefault();
+    let fetchBody = { activity_id: this.state.activityId,
+                      trip_id: this.state.currentTripId
+                    };
+    let newFolders = [];
+    fetch(`/api/v1/trips/${this.state.currentTripId}`,
+      { method: "PATCH",
+      body: JSON.stringify(fetchBody) })
+      .then(function(response) {
+        newFolders = response.json();
+        return newFolders;
+      }).then((response) => this.setState({
+        tripData: response
+      }));
   }
 
   render() {
@@ -134,6 +153,7 @@ class App extends Component {
     let show = null;
     if (this.state.page) {
       show = <Button
+              handleSelectActivity={this.handleSelectActivity}
               handleAdd={this.handleAdd}
             />
     } else {

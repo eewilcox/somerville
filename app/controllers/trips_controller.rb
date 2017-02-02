@@ -3,6 +3,10 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
+    @activity_info = []
+    @trips.each do |trip|
+      @activity_info << TripActivity.where('trip_id =?', trip.id)
+    end
   end
 
   def new
