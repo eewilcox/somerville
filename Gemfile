@@ -14,6 +14,7 @@ gem 'fog-aws'
 gem "font-awesome-rails"
 gem 'rest-client'
 gem 'sendgrid-ruby'
+gem 'google_places'
 
 
 group :development do
