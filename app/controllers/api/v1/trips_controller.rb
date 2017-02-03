@@ -16,9 +16,9 @@ class Api::V1::TripsController < ApplicationController
     data = JSON.parse(request.body.read)
 
     if data["trip"]["activeTrip"]
-      formerTrip = Trip.find(data["trip"]["activeTrip"])
-      formerTrip.current = false
-      formerTrip.save!
+      former_trip = Trip.find(data["trip"]["activeTrip"])
+      former_trip.current = false
+      former_trip.save!
     end
 
     trip = Trip.new
