@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import Trip from './Trip';
+import NewTrip from './NewTrip';
 import Button from './Button';
 
 class App extends Component {
@@ -38,7 +38,8 @@ class App extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({
-          trips: body,
+          trips: body[0]['trips'],
+          currentTripId: body[0]['currentTripId']
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -62,10 +63,12 @@ class App extends Component {
     event.preventDefault();
     let data = document.getElementById("trip-name").value;
     let id = this.state.userNewId;
+    let activeTrip = this.state.currentTripId;
     let newData = {
       "trip": {
         "trip_name": data,
-        "user_id": id
+        "user_id": id,
+        "activeTrip": activeTrip
       }
     };
 
@@ -92,7 +95,9 @@ class App extends Component {
   }
 
   handleSelectTrip(tripId) {
-    fetch(`/api/v1/trips`)
+    fetch(`/api/v1/trips/${tripId}`, {
+      credentials: 'same-origin'
+    })
       .then(response => {
         if (response.ok) {
           return response;
@@ -124,25 +129,6 @@ class App extends Component {
 
 
   render() {
-    let trips = this.state.trips.map((trip) => {
-      let handleDeleteTrip = () => {
-        this.handleDeleteTrip(trip.id);
-      };
-
-      let handleSelectTrip = () => {
-        this.handleSelectTrip(trip.id);
-      };
-
-        return (
-          <Trip
-            id={trip.id}
-            key={trip.id}
-            name={trip.trip_name}
-            handleDeleteTrip={handleDeleteTrip}
-            handleSelectTrip={handleSelectTrip}
-          />
-        )
-      });
 
     let show = null;
     if (this.state.page) {
@@ -150,16 +136,23 @@ class App extends Component {
               handleAdd={this.handleAdd}
             />
     } else {
-      show = trips
+      show = <NewTrip
+              trips={this.state.trips}
+              handleDeleteTrip={this.handleDeleteTrip}
+              handleSelectTrip={this.handleSelectTrip}
+              handleNewTrip={this.handleNewTrip}
+              tripsData={this.state.tripsData}
+              currentTripId={this.state.currentTripId}
+              tripName={this.state.tripName}
+              userNewId={this.state.userNewId}
+              activityId={this.state.activityId}
+            />
     }
+
 
     return(
       <div>
         <h4 onClick={this.handleBoolean}>Select Trip</h4>
-        <form>
-          <input id="trip-name" type="text" placeholder="New Trip"></input>
-          <input onClick={this.handleNewTrip} type="submit"></input>
-        </form>
         {show}
       </div>
     )
