@@ -2,14 +2,14 @@ class Api::V1::TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    userTrips = Trip.where(user_id: current_user)
+    user_trips = Trip.where(user_id: current_user)
     id = nil
-    userTrips.each do |trip|
+    user_trips.each do |trip|
       if trip.current == true
         id = trip.id
       end
     end
-    render json: [trips: userTrips, currentTripId: id]
+    render json: [trips: user_trips, currentTripId: id]
   end
 
   def create
@@ -39,10 +39,10 @@ class Api::V1::TripsController < ApplicationController
       end
     end
 
-    selectedTrip = Trip.find(params[:id])
-    selectedTrip.current = true
-    if selectedTrip.save!
-      render json: selectedTrip
+    selected_trip = Trip.find(params[:id])
+    selected_trip.current = true
+    if selected_trip.save!
+      render json: selected_trip
     end
   end
 
