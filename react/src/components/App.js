@@ -38,7 +38,8 @@ class App extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({
-          trips: body,
+          trips: body[0]['trips'],
+          currentTripId: body[0]['currentTripId']
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -62,10 +63,12 @@ class App extends Component {
     event.preventDefault();
     let data = document.getElementById("trip-name").value;
     let id = this.state.userNewId;
+    let activeTrip = this.state.currentTripId;
     let newData = {
       "trip": {
         "trip_name": data,
-        "user_id": id
+        "user_id": id,
+        "activeTrip": activeTrip
       }
     };
 
@@ -92,7 +95,9 @@ class App extends Component {
   }
 
   handleSelectTrip(tripId) {
-    fetch(`/api/v1/trips`)
+    fetch(`/api/v1/trips/${tripId}`, {
+      credentials: 'same-origin'
+    })
       .then(response => {
         if (response.ok) {
           return response;

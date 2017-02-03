@@ -2,17 +2,47 @@ class Api::V1::TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: Trip.where(user_id: current_user)
+    userTrips = Trip.where(user_id: current_user)
+    id = nil
+    userTrips.each do |trip|
+      if trip.current == true
+        id = trip.id
+      end
+    end
+    render json: [trips: userTrips, currentTripId: id]
   end
 
   def create
     data = JSON.parse(request.body.read)
 
+    if data["trip"]["activeTrip"]
+      formerTrip = Trip.find(data["trip"]["activeTrip"])
+      formerTrip.current = false
+      formerTrip.save!
+    end
+
     trip = Trip.new
     trip.trip_name = data["trip"]["trip_name"]
     trip.user_id = data["trip"]["user_id"]
+    trip.current = true
     if trip.save!
       render json: trip
+    end
+  end
+
+  def show
+    trips = Trip.where(user_id: current_user)
+    trips.each do |trip|
+      if trip.current == true
+        trip.current = false
+        trip.save!
+      end
+    end
+
+    selectedTrip = Trip.find(params[:id])
+    selectedTrip.current = true
+    if selectedTrip.save!
+      render json: selectedTrip
     end
   end
 
