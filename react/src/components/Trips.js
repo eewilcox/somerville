@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import NewTrip from './NewTrip';
+import Trip from './Trip';
 
 class Trips extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Trips extends Component {
       trips: [],
       currentTripId: null,
       userNewId: parseInt(document.getElementById('ident').dataset.id),
-      page: true,
+      page: false,
     };
     this.getData = this.getData.bind(this);
     this.handleDeleteTrip = this.handleDeleteTrip.bind(this);
@@ -33,8 +34,8 @@ class Trips extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({
-          trips: body[0]['trips'],
-          currentTripId: body[0]['currentTripId']
+          trips: body[0].trips,
+          currentTripId: body[0].currentTripId
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -52,7 +53,6 @@ class Trips extends Component {
       this.setState({ page: true});
     }
   }
-
 
   handleNewTrip(event) {
     event.preventDefault();
@@ -106,23 +106,54 @@ class Trips extends Component {
   }
 
   render() {
+    let show;
+    let poop;
+    poop =
+      <NewTrip
+        trips={this.state.trips}
+        handleDeleteTrip={this.handleDeleteTrip}
+        handleSelectTrip={this.handleSelectTrip}
+        handleNewTrip={this.handleNewTrip}
+        currentTripId={this.state.currentTripId}
+        userNewId={this.state.userNewId}
+      />
 
-    let show = null;
-    if (this.state.page) {
-      show = <NewTrip
-              trips={this.state.trips}
-              handleDeleteTrip={this.handleDeleteTrip}
-              handleSelectTrip={this.handleSelectTrip}
-              handleNewTrip={this.handleNewTrip}
-              currentTripId={this.state.currentTripId}
-              userNewId={this.state.userNewId}
-            />
+    let trips;
+    if (this.state.trips) {
+      trips = this.state.trips.map(trip => {
+        let handleDeleteTrip = () => {
+          this.handleDeleteTrip(trip.id);
+        };
+
+        let handleSelectTrip = () => {
+          this.handleSelectTrip(trip.id);
+        };
+
+        return (
+          <Trip
+            id={trip.id}
+            key={trip.id}
+            name={trip.trip_name}
+            handleDeleteTrip={handleDeleteTrip}
+            handleSelectTrip={handleSelectTrip}
+          />
+        )
+      })
     }
+
+    let show = poop;
+      if (this.state.page) {
+        show = <NewTrip />
+      } else {
+        show = trips
+      }
 
 
     return(
-      <div>
-        <h5 onClick={this.handleBoolean}>Select Trip</h5>
+      <div id="tres-buttons" className="small-8 small-centered columns">
+        <button className="react-button" onClick={this.handleBoolean}>Create New Trip</button>
+        <button className="react-button" onClick={this.handleBoolean}>Work on Different Trip</button>
+        <a className="react-button" href="zones#index">Back to neighborhoods</a>
         {show}
       </div>
     )

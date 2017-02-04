@@ -11,7 +11,7 @@ class Button extends Component {
     return(
       <div>
         <p>{this.props.alert}</p>
-        <button id="add-activity" onClick={this.props.handleAdd}>Add to Trip</button>
+        <button className="react-button" onClick={this.props.handleAdd}>Add to Trip</button>
       </div>
     );
   }

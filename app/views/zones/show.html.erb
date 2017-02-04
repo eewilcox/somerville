@@ -1,16 +1,25 @@
 <div id="app"></div>
 
-<div id="activity">
-<div id="activity-name"><h2><%= @activity.name %></h2></div>
-<div id="activity-address"><h6><%= @activity.address %></h6></div>
-<div id="activity-description"><h5><%= @activity.description %></h5></div>
+  <% @trips.each do |trip| %>
+    <% if trip.current %>
+      <h6 class="small-3 small-centered columns">Current Trip: <%= trip.trip_name %></h6>
+      <h6 class="row small-6 small-centered columns"><% trip.activities.each do |activity| %>
+        <%= activity['name'] %>     -----
+        <% end %></h6>
+      <% end %>
+  <% end %>
 
-<div><%= @google_info[0].name %></div>
-<div><%= @google_info[0].rating %></div>
-<div><%= @google_info[0].price_level %></div>
+<div id="activity" class="row small-6 small-centered columns">
+  <div id="activity-name"><h2><%= @activity.name %></h2></div>
+  <div id="activity-address"><h6><%= @activity.address %></h6></div>
+  <div id="activity-description"><h5><%= @activity.description %></h5></div>
+</div>
 
 
-<div id="button" data-id="<%= @activity.id %>">
+
+
+
+<div class="row small-3 small-centered columns" id="button" data-id="<%= @activity.id %>">
   <%= button_to "Next Stop", zone_path(@zone.id), method: :get %>
 </div>
 

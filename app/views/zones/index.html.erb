@@ -1,13 +1,13 @@
 
 <div id="background-img">
-<h1>Somerville</h1>
+<h1 class="small-11 small-centered columns">Somerville</h1>
 
 <%= form_for(@zone, method: :get) do |f| %>
-  <div class="field">
+  <div class="field small-11 small-centered columns">
     <%= f.collection_select(:name, Zone.all, :id, :name, prompt: true) %>
   </div>
 
-  <div class="actions" >
+  <div class="actions small-11 small-centered columns" >
     <%= f.submit "Go!"%>
   </div>
 <% end %>

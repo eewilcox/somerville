@@ -9,11 +9,25 @@ body {
   font-family: 'IM Fell Double Pica', serif;
 }
 
+input {
+  background-color: #CF4647;
+  color: #E5DDCB;
+  font-family: 'IM Fell Double Pica', serif;
+  padding: 0.3rem;
+  text-align: center;
+  border-radius: 8px;
+  outline: 0;
+}
+
+button:focus {
+  outline:0;
+}
+
 h6 {
   font-family: 'Love Ya Like A Sister', cursive;
   color: #E5DDCB;
-  margin: 0.5rem 2rem;
-  padding: 0.7rem 1rem;
+  margin: 0.2rem 0.2rem;
+  padding: 0.2rem 0.2rem;
 }
 
 h1, h2 {
@@ -25,36 +39,36 @@ h4 {
   font-family: 'IM Fell Double Pica', serif;
 }
 
+.react-button {
+  background-color: #CF4647;
+  color: #E5DDCB;
+  font-family: 'IM Fell Double Pica', serif;
+  margin: 0.5rem 2rem;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+.react-button:hover{
+  color: #524656;
+}
+
 #activity {
-  height: 500px;
-  padding: 10px;
-}
-
-#activity-name {
-  padding: 0 40% 0 40%;
-}
-
-#activity-address {
-  padding: 0 40% 0 40%;
-}
-
-#activity-description {
-  padding: 0 40% 0 40%;
-}
-
-#button {
-  padding: 0 40% 0 40%;
-}
-
-#add-activity {
-  background-color: red;
-  padding: 10px 50px;
+  padding: 2rem 0;
 }
 
 #trip-name {
-  background-color: #D6D9FF;
-  padding: 10px 5px;
-  max-width: 20%;
+  background-color: #E5DDCB;
+}
+#new-trip {
+  padding: 10px 10px;
+  margin: 5rem 5rem;
+  max-width: 50%;
+}
+
+#tres-buttons {
+  margin-bottom: 3rem;
 }
 
 #background-img {
@@ -65,4 +79,11 @@ h4 {
   background-size: 1300px;
   height: 700px;
   padding: 5% 20%;
+}
+
+#activity-title {
+  text-decoration: underline;
+}
+#activity-list {
+  margin-bottom: 3rem;
 }
