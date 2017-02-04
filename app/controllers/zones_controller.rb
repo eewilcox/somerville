@@ -12,6 +12,10 @@ class ZonesController < ApplicationController
       @zone = Zone.find(params[:id])
     end
     @activities = @zone.activities
+    @activity = @activities.sample
+
+    @client = GooglePlaces::Client.new(ENV['API_KEY'])
+    @google_info = @client.spots_by_query("#{@activity.name}")
   end
 
 end

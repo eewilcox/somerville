@@ -1,5 +1,21 @@
-h1 {
-  color: white;
+/*Green: #A7C5BD
+Off white: #E5DDCB
+Orange: #EB7B59
+Red: #CF4647
+Dark Purple: #524656 */
+
+body {
+  background-color: #524656;
+  font-family: 'IM Fell Double Pica', serif;
+}
+
+h1, h2 {
+  color: #E5DDCB;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+h4 {
+  font-family: 'IM Fell Double Pica', serif;
 }
 
 #activity {
@@ -35,8 +51,11 @@ h1 {
 }
 
 #background-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   background-image: url("/assets/131118_sarma-details_47.jpg");
-  background-size: 1800px;
-  height: 1000px;
-  padding: 5%;
+  background-size: 1300px;
+  height: 700px;
+  padding: 5% 20%;
 }
