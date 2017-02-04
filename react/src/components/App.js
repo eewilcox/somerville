@@ -152,7 +152,7 @@ class App extends Component {
 
     return(
       <div>
-        <h4 onClick={this.handleBoolean}>Select Trip</h4>
+        <h5 onClick={this.handleBoolean}>Select Trip</h5>
         {show}
       </div>
     )

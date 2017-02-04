@@ -32,7 +32,7 @@ class NewTrip extends Component {
     return(
       <div>
         <form>
-          <input id="trip-name" type="text" placeholder="New Trip"></input>
+          <input id="trip-name" type="text" placeholder="Create a New Trip"></input>
           <input onClick={this.props.handleNewTrip} type="submit"></input>
         </form>
         {trips}
