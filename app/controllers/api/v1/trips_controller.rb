@@ -4,12 +4,14 @@ class Api::V1::TripsController < ApplicationController
   def index
     user_trips = Trip.where(user_id: current_user)
     id = nil
+    trip_name = nil
     user_trips.each do |trip|
       if trip.current == true
         id = trip.id
+        trip_name = trip.trip_name
       end
     end
-    render json: [trips: user_trips, currentTripId: id]
+    render json: [trips: user_trips, currentTripId: id, message: trip_name]
   end
 
   def create

@@ -36,6 +36,7 @@ class NewTrip extends Component {
           <input onClick={this.props.handleNewTrip} type="submit"></input>
         </form>
         {trips}
+        <a href="zones#index">Back to neighborhoods</a>
       </div>
     );
   }
