@@ -9,10 +9,11 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|IM+Fell+Double+Pica" rel="stylesheet">
 </head>
 
 <body>
-  <div class="top-bar">
+
     <div class="top-bar-right">
       <ul class="dropdown menu" data-dropdown-menu>
         <li>
@@ -31,7 +32,7 @@
         </li>
       </ul>
     </div>
-  </div>
+
 
   <div class="flash">
    <% flash.each do |key, value| %>
