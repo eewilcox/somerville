@@ -50,7 +50,7 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #E5DDCB,
+  primary: #e5ddcb,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
@@ -60,7 +60,7 @@ $light-gray: #524656;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
-$white: #E5DDCB;
+$white: #e5ddcb;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'IM Fell Double Pica', serif, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
@@ -326,7 +326,7 @@ $drilldown-background: $white;
 // 17. Dropdown
 // ------------
 
-$dropdown-padding: .8rem;
+$dropdown-padding: 0.8rem;
 $dropdown-background: $body-background;
 $dropdown-border: 1px solid $medium-gray;
 $dropdown-font-size: 1rem;
@@ -345,7 +345,7 @@ $dropdownmenu-arrows: true;
 $dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-arrow-size: 5px;
 $dropdownmenu-min-width: 200px;
-$dropdownmenu-background: rgba(0,0,0,.8);
+$dropdownmenu-background: rgba(0, 0, 0, 0.8);
 $dropdownmenu-border: 1px solid $medium-gray;
 
 // 19. Forms
@@ -409,7 +409,7 @@ $mediaobject-image-width-stacked: 100%;
 // 22. Menu
 // --------
 
-$menu-margin: .5rem 2rem;
+$menu-margin: 0.5rem 2rem;
 $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
 $menu-item-color-active: $white;
@@ -613,7 +613,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.3rem 0.7rem;
-$topbar-background: rgba(0,0,0,0);
+$topbar-background: rgba(0, 0, 0, 0);
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
