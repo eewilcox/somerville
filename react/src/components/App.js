@@ -63,7 +63,7 @@ class App extends Component {
   render() {
     return(
       <div>
-        <h6>{this.state.message}</h6>
+        <h6>Currently Working on Trip: {this.state.message}</h6>
         <Button
           handleAdd={this.handleAdd}
           alert={this.state.alert}

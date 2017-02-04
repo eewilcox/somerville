@@ -6,9 +6,7 @@ class Trips extends Component {
     super(props);
     this.state = {
       trips: [],
-      tripsData: [],
       currentTripId: null,
-      tripName: "",
       userNewId: parseInt(document.getElementById('ident').dataset.id),
       page: true,
     };
@@ -16,7 +14,6 @@ class Trips extends Component {
     this.handleDeleteTrip = this.handleDeleteTrip.bind(this);
     this.handleSelectTrip = this.handleSelectTrip.bind(this);
     this.handleNewTrip = this.handleNewTrip.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
     this.handleBoolean = this.handleBoolean.bind(this);
   }
 
@@ -108,24 +105,6 @@ class Trips extends Component {
       });
   }
 
-  handleAdd(event) {
-    event.preventDefault();
-    let fetchBody = { activity_id: this.state.activityId,
-                      trip_id: this.state.currentTripId
-                    };
-    let newFolders = [];
-    fetch(`/api/v1/trips/${this.state.currentTripId}`,
-      { method: "PATCH",
-      body: JSON.stringify(fetchBody) })
-      .then(function(response) {
-        newFolders = response.json();
-        return newFolders;
-      }).then((response) => this.setState({
-        tripsData: response
-      }));
-  }
-
-
   render() {
 
     let show = null;
@@ -135,11 +114,8 @@ class Trips extends Component {
               handleDeleteTrip={this.handleDeleteTrip}
               handleSelectTrip={this.handleSelectTrip}
               handleNewTrip={this.handleNewTrip}
-              tripsData={this.state.tripsData}
               currentTripId={this.state.currentTripId}
-              tripName={this.state.tripName}
               userNewId={this.state.userNewId}
-              activityId={this.state.activityId}
             />
     }
 
