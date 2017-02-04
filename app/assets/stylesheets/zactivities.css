@@ -1,3 +1,8 @@
+body {
+  background-color: #737081;
+}
+
+
 h1 {
   color: white;
 }
@@ -35,8 +40,9 @@ h1 {
 }
 
 #background-img {
+  background: gray;
   background-image: url("/assets/131118_sarma-details_47.jpg");
-  background-size: 1800px;
-  height: 1000px;
-  padding: 5%;
+  background-size: 1300px;
+  height: 700px;
+  padding: 10%;
 }
