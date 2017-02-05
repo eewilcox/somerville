@@ -1,6 +1,6 @@
 /*Green: #A7C5BD
-Off white: #E5DDCB
-Orange: #EB7B59
+Off white: #e5ddcb
+Orange: #eb7b59
 Red: #CF4647
 Dark Purple: #524656 */
 
@@ -10,8 +10,8 @@ body {
 }
 
 input {
-  background-color: #CF4647;
-  color: #E5DDCB;
+  background-color: #cf4647;
+  color: #e5ddcb;
   font-family: 'IM Fell Double Pica', serif;
   padding: 0.3rem;
   text-align: center;
@@ -25,29 +25,29 @@ button:focus {
 
 h6 {
   font-family: 'Love Ya Like A Sister', cursive;
-  color: #E5DDCB;
+  color: #e5ddcb;
   margin: 0.2rem 0.2rem;
   padding: 0.2rem 0.2rem;
 }
 
 h1, h2 {
-  color: #E5DDCB;
+  color: #e5ddcb;
   font-family: 'Love Ya Like A Sister', cursive;
 }
 
 h4 {
-  color: #EB7B59;
+  color: #eb7b59;
   font-family: 'IM Fell Double Pica', serif;
 }
 
 .flash {
-  color: #EB7B59;
+  color: #eb7b59;
   font-family: 'IM Fell Double Pica', serif;
 }
 
 .react-button {
-  background-color: #CF4647;
-  color: #E5DDCB;
+  background-color: #cf4647;
+  color: #e5ddcb;
   font-family: 'IM Fell Double Pica', serif;
   margin: 0.5rem 2rem;
   padding: 0.7rem 1rem;
@@ -73,16 +73,12 @@ h4 {
   margin: 0.1rem 0.3rem 2rem 0.1rem;
   padding: 0.2rem;
   color: #524656;
-  background-color: #A7C5BD;
-  box-shadow: 0.7px 0.7px 0.4px #E5DDCB;
+  background-color: #a7c5bd;
+  box-shadow: 0.7px 0.7px 0.4px #e5ddcb;
 }
 
 #select-button:hover{
-  color: #E5DDCB;
-}
-
-#select-name {
-
+  color: #e5ddcb;
 }
 
 #row {
@@ -99,7 +95,7 @@ h4 {
 }
 
 #trip-name {
-  background-color: #E5DDCB;
+  background-color: #e5ddcb;
   text-align: center;
 }
 #new-trip {
