@@ -10,12 +10,14 @@ class Trips extends Component {
       currentTripId: null,
       userNewId: parseInt(document.getElementById('ident').dataset.id),
       page: false,
+      page2: false,
     };
     this.getData = this.getData.bind(this);
     this.handleDeleteTrip = this.handleDeleteTrip.bind(this);
     this.handleSelectTrip = this.handleSelectTrip.bind(this);
     this.handleNewTrip = this.handleNewTrip.bind(this);
     this.handleBoolean = this.handleBoolean.bind(this);
+    this.handleBoolean2 = this.handleBoolean2.bind(this);
   }
 
   getData() {
@@ -51,6 +53,15 @@ class Trips extends Component {
       this.setState({ page: false});
     } else {
       this.setState({ page: true});
+    }
+  }
+
+  handleBoolean2(event) {
+    event.preventDefault();
+    if (this.state.page2) {
+      this.setState({ page2: false});
+    } else {
+      this.setState({ page2: true});
     }
   }
 
@@ -106,27 +117,30 @@ class Trips extends Component {
   }
 
   render() {
-    let trips = this.state.trips.map((trip) => {
-      let handleDeleteTrip = () => {
-        this.handleDeleteTrip(trip.id);
-      };
+    let trips;
+    if (this.state.page2) {
+      trips = this.state.trips.map((trip) => {
+        let handleDeleteTrip = () => {
+          this.handleDeleteTrip(trip.id);
+        };
 
-      let handleSelectTrip = () => {
-        this.handleSelectTrip(trip.id);
-      };
+        let handleSelectTrip = () => {
+          this.handleSelectTrip(trip.id);
+        };
 
-        return (
-          <Trip
-            id={trip.id}
-            key={trip.id}
-            name={trip.trip_name}
-            handleDeleteTrip={handleDeleteTrip}
-            handleSelectTrip={handleSelectTrip}
-          />
-        )
-      });
+          return (
+            <Trip
+              id={trip.id}
+              key={trip.id}
+              name={trip.trip_name}
+              handleDeleteTrip={handleDeleteTrip}
+              handleSelectTrip={handleSelectTrip}
+            />
+          )
+        });
+    }
 
-    let show = null;
+    let show;
     if (this.state.page) {
       show = <NewTrip
         trips={this.state.trips}
@@ -136,16 +150,15 @@ class Trips extends Component {
         currentTripId={this.state.currentTripId}
         userNewId={this.state.userNewId}
       />
-    } else {
-      show = trips
     }
 
     return(
       <div id="tres-buttons" className="small-8 small-centered columns">
         <button className="react-button" onClick={this.handleBoolean}>Create New Trip</button>
-        <button className="react-button" onClick={this.handleBoolean}>Work on Different Trip</button>
+        <button className="react-button" onClick={this.handleBoolean2}>Work on Different Trip</button>
         <a className="react-button" href="zones#index">Back to neighborhoods</a>
         {show}
+        {trips}
       </div>
     )
   }
