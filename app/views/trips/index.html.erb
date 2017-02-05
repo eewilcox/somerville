@@ -1,6 +1,6 @@
-<div id="my-trips">
+<h2><%= current_user.username %>'s Trips</h2>
 
-</div>
+<div id="my-trips"></div>
 
 <% @trips.each do |trip| %>
   <h6 id="activity-title"class="small-3 small-centered columns"><%= trip.trip_name %></h6>

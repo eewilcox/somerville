@@ -19,6 +19,10 @@ input {
   outline: 0;
 }
 
+label {
+  color: #e5ddcb;
+}
+
 button:focus {
   outline:0;
 }
@@ -31,9 +35,13 @@ h6 {
   text-align: center;
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: #e5ddcb;
   font-family: 'Love Ya Like A Sister', cursive;
+}
+
+h2 {
+  padding-left: 10rem;
 }
 
 h4 {
@@ -59,6 +67,11 @@ h4 {
 
 .react-button:hover{
   color: #524656;
+}
+
+#go input {
+  background-color: #CF4647;
+  color: #e5ddcb;
 }
 
 #main-button {
@@ -146,6 +159,11 @@ h4 {
 #tres-buttons {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+.update {
+  padding-left: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 #background-img {

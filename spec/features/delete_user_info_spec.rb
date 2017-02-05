@@ -9,7 +9,7 @@ feature "User deletes account" do
     user = FactoryGirl.create(:user)
     zone = FactoryGirl.create(:zone)
     activity = FactoryGirl.create(:activity, zone: zone)
-    
+
     visit root_path
     click_link 'Sign In'
     fill_in 'Email', with: user.email
@@ -17,8 +17,8 @@ feature "User deletes account" do
     click_button 'Log in'
 
     click_link 'Change My User Info'
-    click_button 'Cancel my account'
+    click_button 'Delete account'
 
-    expect(page).to have_content('Bye! Your account has been successfully cancelled. We hope to see you again soon.')
+    expect(page).to have_content('Your account has been successfully cancelled.')
   end
 end
