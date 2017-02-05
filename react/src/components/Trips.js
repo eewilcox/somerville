@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
-import NewTrip from './NewTrip';
 import Trip from './Trip';
+import NewTrip from './NewTrip';
 
 class Trips extends Component {
   constructor(props) {
@@ -106,28 +106,14 @@ class Trips extends Component {
   }
 
   render() {
-    let show;
-    let poop;
-    poop =
-      <NewTrip
-        trips={this.state.trips}
-        handleDeleteTrip={this.handleDeleteTrip}
-        handleSelectTrip={this.handleSelectTrip}
-        handleNewTrip={this.handleNewTrip}
-        currentTripId={this.state.currentTripId}
-        userNewId={this.state.userNewId}
-      />
+    let trips = this.state.trips.map((trip) => {
+      let handleDeleteTrip = () => {
+        this.handleDeleteTrip(trip.id);
+      };
 
-    let trips;
-    if (this.state.trips) {
-      trips = this.state.trips.map(trip => {
-        let handleDeleteTrip = () => {
-          this.handleDeleteTrip(trip.id);
-        };
-
-        let handleSelectTrip = () => {
-          this.handleSelectTrip(trip.id);
-        };
+      let handleSelectTrip = () => {
+        this.handleSelectTrip(trip.id);
+      };
 
         return (
           <Trip
@@ -138,16 +124,21 @@ class Trips extends Component {
             handleSelectTrip={handleSelectTrip}
           />
         )
-      })
+      });
+
+    let show = null;
+    if (this.state.page) {
+      show = <NewTrip
+        trips={this.state.trips}
+        handleDeleteTrip={this.handleDeleteTrip}
+        handleSelectTrip={this.handleSelectTrip}
+        handleNewTrip={this.handleNewTrip}
+        currentTripId={this.state.currentTripId}
+        userNewId={this.state.userNewId}
+      />
+    } else {
+      show = trips
     }
-
-    let show = poop;
-      if (this.state.page) {
-        show = <NewTrip />
-      } else {
-        show = trips
-      }
-
 
     return(
       <div id="tres-buttons" className="small-8 small-centered columns">
