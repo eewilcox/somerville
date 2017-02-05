@@ -63,13 +63,4 @@ class Api::V1::TripsController < ApplicationController
       flash[:notice] =  'Please select a trip first'
     end
   end
-
-  def destroy
-    data = JSON.parse(request.body.read)
-    trip = Trip.find(data["id"])
-    if trip.delete
-      @trips = Trip.all
-      render json: @trips
-    end
-  end
 end

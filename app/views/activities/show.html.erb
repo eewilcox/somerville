@@ -1,4 +1,4 @@
-  <div id="delete-from-trip" class="small-3 small-left columns"><%= link_to "Delete from Trip", @activity, method: :delete, data: {confirm: "Are you sure?"} %></div>
+  <div id="delete-from-trip" class="small-3 small-left columns"><%= link_to "Delete from Trip", @activity, method: :delete %></div>
 
   <% @trips.each do |trip| %>
     <% if trip.current %>
@@ -10,7 +10,7 @@
   <% end %>
 
 <div id="activity" class="row small-6 small-centered columns">
-  <div id="activity-name"><h2><%= @activity.name %></h2></div>
+  <div id="activity-name"><h1><%= @activity.name %></h1></div>
   <div id="activity-address"><h6><%= @activity.address %></h6></div>
   <div id="activity-description"><h5><%= @activity.description %></h5></div>
 </div>

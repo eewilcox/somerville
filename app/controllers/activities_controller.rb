@@ -14,10 +14,11 @@ class ActivitiesController < ApplicationController
       end
     end
     @trip_activity = TripActivity.where("trip_id=? and activity_id=?", @the_trip.id, @activity.id)
-    if @trip_activity[0].destroy
+    if @trip_activity[0]
+      @trip_activity[0].destroy
       redirect_to @activity
     else
-      flash[:notice] =  "That activity is not in your current trip"
+      flash[:notice] =  "You already deleted that activity!"
       redirect_to @activity
     end
   end

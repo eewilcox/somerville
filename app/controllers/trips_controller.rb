@@ -9,6 +9,9 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     if @trip.destroy
       redirect_to trips_path
+    else
+      flash[:notice] =  "You already deleted that trip!"
+      redirect_to trips_path
     end
   end
 end
