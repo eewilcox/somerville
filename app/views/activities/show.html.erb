@@ -1,3 +1,5 @@
+  <div id="delete-from-trip" class="small-3 small-left columns"><%= link_to "Delete from Trip", @activity, method: :delete, data: {confirm: "Are you sure?"} %></div>
+
   <% @trips.each do |trip| %>
     <% if trip.current %>
       <h6 class="small-3 small-centered columns"><%= trip.trip_name %></h6>

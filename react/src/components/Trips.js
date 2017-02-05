@@ -7,6 +7,7 @@ class Trips extends Component {
     super(props);
     this.state = {
       trips: [],
+      tripName: null,
       currentTripId: null,
       userNewId: parseInt(document.getElementById('ident').dataset.id),
       page: false,
@@ -135,8 +136,10 @@ class Trips extends Component {
         let data = body;
         this.setState({
           currentTripId: tripId,
-          alert: "Trip Selected!"
+          tripName: data.trip_name,
         });
+      }).then(p  => {
+        this.setState({alert: `${this.state.tripName} Selected!`});
       });
   }
 
@@ -181,7 +184,6 @@ class Trips extends Component {
         <h4>{this.state.alert}</h4>
         <button className="react-button" onClick={this.handleBoolean}>Create New Trip</button>
         <button className="react-button" onClick={this.handleBoolean2}>Manage Trips</button>
-        <a className="react-button" href="zones#index">Back to neighborhoods</a>
         {show}
         {trips}
       </div>
