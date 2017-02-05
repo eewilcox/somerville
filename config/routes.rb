@@ -4,13 +4,9 @@ Rails.application.routes.draw do
 
   root "zones#index"
 
-  resources :trips, only: [:index, :create, :new] do
-    resources :activities, only: [:index]
-  end
-
-  resources :zones, only: [:index, :show] do
-    resources :activities, only: []
-  end
+  resources :trips, only: [:index]
+  resources :activities, only: [:show]
+  resources :zones, only: [:index, :show]
 
   namespace :api do
     namespace :v1 do

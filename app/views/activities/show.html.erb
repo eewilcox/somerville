@@ -1,15 +1,11 @@
-<div id="app">
-
   <% @trips.each do |trip| %>
     <% if trip.current %>
-      <h6 class="small-3 small-centered columns">Current Trip: <%= trip.trip_name %></h6>
+      <h6 class="small-3 small-centered columns"><%= trip.trip_name %></h6>
       <h6 class="row small-6 small-centered columns"><% trip.activities.each do |activity| %>
-        <%= activity['name'] %>     -----
+        <a href="/activities/<%= activity['id'] %>"><%= activity['name'] %>     -----</a>
         <% end %></h6>
       <% end %>
   <% end %>
-
-</div>
 
 <div id="activity" class="row small-6 small-centered columns">
   <div id="activity-name"><h2><%= @activity.name %></h2></div>

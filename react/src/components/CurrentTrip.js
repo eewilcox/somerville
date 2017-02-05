@@ -9,9 +9,9 @@ class CurrentTrip extends Component {
 
   render() {
     return(
-      <div style={{display: 'inline-block'}}>
+      <div style={{display: 'inline-block'}}><a href={`/activities/${this.props.id}`}>
       - {this.props.name} -
-      </div>
+      </a></div>
     );
   }
 }

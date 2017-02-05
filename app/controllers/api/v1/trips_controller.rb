@@ -59,6 +59,8 @@ class Api::V1::TripsController < ApplicationController
     trip_activity.activity_id = activity.id
     if trip_activity.save!
       render json: trip
+    else
+      flash[:notice] =  'Please select a trip first'
     end
   end
 
