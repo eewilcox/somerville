@@ -54,6 +54,27 @@ h4 {
   color: #524656;
 }
 
+#delete-button {
+  margin: 0.1rem 0.3rem 2rem 0.1rem;
+  padding: 0.2rem;
+}
+
+#select-button {
+  margin: 0.1rem 0.3rem 2rem 0.1rem;
+  padding: 0.2rem;
+  color: #524656;
+  background-color: #A7C5BD;
+  box-shadow: 0.7px 0.7px 0.4px #E5DDCB;
+}
+
+#select-button:hover{
+  color: #E5DDCB;
+}
+
+#select-name {
+
+}
+
 #activity {
   padding: 2rem 0;
 }
