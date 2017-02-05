@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import Trips from './components/Trips';
 
 
 $(function() {
@@ -11,4 +12,10 @@ $(function() {
       document.getElementById('app')
     );
   };
+  if (document.getElementById('my-trips')) {
+    ReactDOM.render(
+      <Trips />,
+      document.getElementById('my-trips')
+    );
+  }
 });

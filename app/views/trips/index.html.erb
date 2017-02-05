@@ -1,12 +1,10 @@
-<div id="app">
+<div id="my-trips">
 
 </div>
 
-<ul>
-  <% @trips.each do |trip| %>
-    <li><%= trip.trip_name %>
-      <% trip.activities.each do |activity| %>
-      - <%= activity['name'] %>
-    <% end %></li>
-  <% end %>
-</ul>
+<% @trips.each do |trip| %>
+  <h6 id="activity-title"class="small-3 small-centered columns"><%= trip.trip_name %></h6>
+  <h6 id="activity-list" class="row small-6 small-centered columns"><% trip.activities.each do |activity| %>
+    <%= activity['name'] %>     -----
+    <% end %></h6>
+<% end %>

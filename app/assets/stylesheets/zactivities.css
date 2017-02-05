@@ -1,6 +1,6 @@
 /*Green: #A7C5BD
-Off white: #E5DDCB
-Orange: #EB7B59
+Off white: #e5ddcb
+Orange: #eb7b59
 Red: #CF4647
 Dark Purple: #524656 */
 
@@ -9,45 +9,108 @@ body {
   font-family: 'IM Fell Double Pica', serif;
 }
 
+input {
+  background-color: #cf4647;
+  color: #e5ddcb;
+  font-family: 'IM Fell Double Pica', serif;
+  padding: 0.3rem;
+  text-align: center;
+  border-radius: 8px;
+  outline: 0;
+}
+
+button:focus {
+  outline:0;
+}
+
+h6 {
+  font-family: 'Love Ya Like A Sister', cursive;
+  color: #e5ddcb;
+  margin: 0.2rem 0.2rem;
+  padding: 0.2rem 0.2rem;
+}
+
 h1, h2 {
-  color: #E5DDCB;
+  color: #e5ddcb;
   font-family: 'Love Ya Like A Sister', cursive;
 }
 
 h4 {
+  color: #eb7b59;
   font-family: 'IM Fell Double Pica', serif;
 }
 
-#activity {
-  height: 500px;
-  padding: 10px;
+.flash {
+  color: #eb7b59;
+  font-family: 'IM Fell Double Pica', serif;
 }
 
-#activity-name {
-  padding: 0 40% 0 40%;
+.react-button {
+  background-color: #cf4647;
+  color: #e5ddcb;
+  font-family: 'IM Fell Double Pica', serif;
+  margin: 0.5rem 2rem;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
 }
 
-#activity-address {
-  padding: 0 40% 0 40%;
-}
-
-#activity-description {
-  padding: 0 40% 0 40%;
+.react-button:hover{
+  color: #524656;
 }
 
 #button {
-  padding: 0 40% 0 40%;
+  text-align: center;
 }
 
-#add-activity {
-  background-color: red;
-  padding: 10px 50px;
+#delete-button {
+  margin: 0.1rem 0.3rem 2rem 0.1rem;
+  padding: 0.2rem;
+}
+
+#select-button {
+  margin: 0.1rem 0.3rem 2rem 0.1rem;
+  padding: 0.2rem;
+  color: #524656;
+  background-color: #a7c5bd;
+  box-shadow: 0.7px 0.7px 0.4px #e5ddcb;
+}
+
+#select-button:hover{
+  color: #e5ddcb;
+}
+
+#row {
+  text-align: center;
+}
+
+#row2 {
+  text-align: center;
+}
+
+#activity {
+  padding: 2rem 0;
+  text-align: center;
 }
 
 #trip-name {
-  background-color: #D6D9FF;
-  padding: 10px 5px;
-  max-width: 20%;
+  background-color: #e5ddcb;
+  text-align: center;
+}
+#new-trip {
+  padding: 5px 5px;
+  margin: 2rem 2rem;
+  text-align: center;
+}
+
+#first-time {
+  margin-top: 100px;
+}
+
+#tres-buttons {
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 #background-img {
@@ -58,4 +121,13 @@ h4 {
   background-size: 1300px;
   height: 700px;
   padding: 5% 20%;
+}
+
+#activity-title {
+  text-decoration: underline;
+  text-align: center;
+}
+#activity-list {
+  margin-bottom: 3rem;
+  text-align: center;
 }

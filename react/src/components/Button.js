@@ -4,14 +4,14 @@ class Button extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activities: [],
     };
   }
 
   render() {
     return(
       <div>
-        <button id="add-activity" onClick={this.props.handleAdd}>Add to Trip</button>
+        <h4>{this.props.alert}</h4>
+        <button className="react-button" onClick={this.props.handleAdd}>Add to Trip</button>
       </div>
     );
   }
