@@ -5,13 +5,15 @@ class Api::V1::TripsController < ApplicationController
     user_trips = Trip.where(user_id: current_user)
     id = nil
     trip_name = nil
+    activities = []
     user_trips.each do |trip|
       if trip.current == true
         id = trip.id
         trip_name = trip.trip_name
       end
+      activities << trip.activities
     end
-    render json: [trips: user_trips, currentTripId: id, message: trip_name]
+    render json: [trips: user_trips, currentTripId: id, message: activities]
   end
 
   def create
