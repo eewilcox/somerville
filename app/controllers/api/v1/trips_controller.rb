@@ -10,10 +10,10 @@ class Api::V1::TripsController < ApplicationController
       if trip.current == true
         id = trip.id
         trip_name = trip.trip_name
+        activities << trip.activities
       end
-      activities << trip.activities
     end
-    render json: [trips: user_trips, currentTripId: id, message: activities]
+    render json: [trips: user_trips, currentTripId: id, message: activities, tripName: trip_name]
   end
 
   def create

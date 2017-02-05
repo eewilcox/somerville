@@ -36,6 +36,12 @@ h1, h2 {
 }
 
 h4 {
+  color: #EB7B59;
+  font-family: 'IM Fell Double Pica', serif;
+}
+
+.flash {
+  color: #EB7B59;
   font-family: 'IM Fell Double Pica', serif;
 }
 
@@ -52,6 +58,10 @@ h4 {
 
 .react-button:hover{
   color: #524656;
+}
+
+#button {
+  text-align: center;
 }
 
 #delete-button {
@@ -75,21 +85,36 @@ h4 {
 
 }
 
+#row {
+  text-align: center;
+}
+
+#row2 {
+  text-align: center;
+}
+
 #activity {
   padding: 2rem 0;
+  text-align: center;
 }
 
 #trip-name {
   background-color: #E5DDCB;
+  text-align: center;
 }
 #new-trip {
-  padding: 10px 10px;
-  margin: 5rem 5rem;
-  max-width: 50%;
+  padding: 5px 5px;
+  margin: 2rem 2rem;
+  text-align: center;
+}
+
+#first-time {
+  margin-top: 100px;
 }
 
 #tres-buttons {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 #background-img {
@@ -104,7 +129,9 @@ h4 {
 
 #activity-title {
   text-decoration: underline;
+  text-align: center;
 }
 #activity-list {
   margin-bottom: 3rem;
+  text-align: center;
 }

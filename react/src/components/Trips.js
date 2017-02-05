@@ -11,6 +11,7 @@ class Trips extends Component {
       userNewId: parseInt(document.getElementById('ident').dataset.id),
       page: false,
       page2: false,
+      alert: "",
     };
     this.getData = this.getData.bind(this);
     this.handleDeleteTrip = this.handleDeleteTrip.bind(this);
@@ -50,23 +51,34 @@ class Trips extends Component {
   handleBoolean(event) {
     event.preventDefault();
     if (this.state.page) {
-      this.setState({ page: false});
+      this.setState({
+        page: false,
+        alert: ""
+      });
     } else {
-      this.setState({ page: true});
+      this.setState({
+        page: true,
+        alert: ""
+      });
     }
   }
 
   handleBoolean2(event) {
     event.preventDefault();
     if (this.state.page2) {
-      this.setState({ page2: false});
+      this.setState({
+        page2: false,
+        alert: ""
+      });
     } else {
-      this.setState({ page2: true});
+      this.setState({
+        page2: true,
+        alert: ""
+      });
     }
   }
 
   handleNewTrip(event) {
-    event.preventDefault();
     let data = document.getElementById("trip-name").value;
     let id = this.state.userNewId;
     let activeTrip = this.state.currentTripId;
@@ -85,7 +97,10 @@ class Trips extends Component {
       .then(function(response) {
         newTrips = response.json();
         return newTrips;
-      }).then((response) => this.getData());
+      }).then((response) =>
+        this.setState({
+          alert: "Created!"})
+      );
     }
 
   handleDeleteTrip(tripId){
@@ -97,7 +112,13 @@ class Trips extends Component {
   }).then(function(response) {
       tripArray = response.json();
       return tripArray;
-  }).then((response) => this.getData());
+  }).then((response) =>
+      this.getData()
+    ).then((p) =>
+      this.setState({
+      alert: "Being deleted..."
+    })
+  );
   }
 
   handleSelectTrip(tripId) {
@@ -112,7 +133,10 @@ class Trips extends Component {
       .then(response => response.json())
       .then(body => {
         let data = body;
-        this.setState({currentTripId: tripId});
+        this.setState({
+          currentTripId: tripId,
+          alert: "Trip Selected!"
+        });
       });
   }
 
@@ -154,8 +178,9 @@ class Trips extends Component {
 
     return(
       <div id="tres-buttons" className="small-8 small-centered columns">
+        <h4>{this.state.alert}</h4>
         <button className="react-button" onClick={this.handleBoolean}>Create New Trip</button>
-        <button className="react-button" onClick={this.handleBoolean2}>Work on Different Trip</button>
+        <button className="react-button" onClick={this.handleBoolean2}>Manage Trips</button>
         <a className="react-button" href="zones#index">Back to neighborhoods</a>
         {show}
         {trips}

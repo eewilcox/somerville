@@ -1,11 +1,13 @@
 import React, { Component }  from 'react';
 import Button from './Button';
+import CurrentTrip from './CurrentTrip';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentTripId: null,
+      tripName: "",
       alert: "",
       message: "",
       userNewId: parseInt(document.getElementById('ident').dataset.id),
@@ -32,7 +34,8 @@ class App extends Component {
       .then(body => {
         this.setState({
           currentTripId: body[0].currentTripId,
-          message: body[0].message
+          message: body[0].message[0],
+          tripName: body[0].tripName
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -54,19 +57,41 @@ class App extends Component {
       .then(function(response) {
         newFolders = response.json();
         return newFolders;
-      }).then((response) => this.setState({
-        alert: 'Activity Added to Trip!'
-      }));
+      }).then((response) => this.getData());
   }
 
 
   render() {
+    let currentTrips;
+    if (this.state.message) {
+      currentTrips = this.state.message.map((message) => {
+          return (
+            <CurrentTrip
+              id={message.id}
+              key={message.id}
+              name={message.name}
+            />
+          )
+        });
+    }
+
+    let button;
+    if (this.state.currentTripId) {
+      button = <Button
+        handleAdd={this.handleAdd}
+        alert={this.state.alert}
+      />
+    } else {
+      button = <a href="/trips" id="first-time" className="react-button">Create New Trip</a>
+    }
     return(
       <div>
-        <Button
-          handleAdd={this.handleAdd}
-          alert={this.state.alert}
-        />
+        <p></p>
+        <div>{button}</div>
+        <h6 id="row2" className="small-3 small-centered columns">Current Trip: {this.state.tripName}</h6>
+        <h6 id="row" className="small-12 small-centered columns">
+          {currentTrips}
+        </h6>
       </div>
     )
   }

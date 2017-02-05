@@ -27,18 +27,18 @@
             <li><%= link_to 'Sign In', new_user_session_path %></li>
           <% end %>
             <li><%= link_to 'Create a New Trip', trips_path %></li>
-            <li><%= link_to 'Select a Different Trip', trips_path %></li>
+            <li><%= link_to 'Manage Trips', trips_path %></li>
           </ul>
         </li>
       </ul>
     </div>
 
 
-  <div class="flash">
+  <h4 class="flash">
    <% flash.each do |key, value| %>
      <%= value %>
    <% end %>
- </div>
+ </h4>
 
 <%= yield %>
 

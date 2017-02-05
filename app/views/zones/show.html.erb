@@ -1,4 +1,4 @@
-<div id="app"></div>
+<div id="app">
 
   <% @trips.each do |trip| %>
     <% if trip.current %>
@@ -8,6 +8,8 @@
         <% end %></h6>
       <% end %>
   <% end %>
+
+</div>
 
 <div id="activity" class="row small-6 small-centered columns">
   <div id="activity-name"><h2><%= @activity.name %></h2></div>
