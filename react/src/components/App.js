@@ -86,12 +86,11 @@ class App extends Component {
     }
     return(
       <div>
-        <p></p>
-        <div>{button}</div>
         <h6 id="row2" className="small-3 small-centered columns">Current Trip: {this.state.tripName}</h6>
         <h6 id="row" className="small-12 small-centered columns">
           {currentTrips}
         </h6>
+        <div id="main-button" className="small-2 small-centered columns">{button}</div>
       </div>
     )
   }

@@ -10,13 +10,17 @@ body {
 }
 
 input {
-  background-color: #cf4647;
-  color: #e5ddcb;
+  background-color: #A7C5BD;
+  color: #524656;
   font-family: 'IM Fell Double Pica', serif;
   padding: 0.3rem;
   text-align: center;
   border-radius: 8px;
   outline: 0;
+}
+
+label {
+  color: #e5ddcb;
 }
 
 button:focus {
@@ -28,11 +32,16 @@ h6 {
   color: #e5ddcb;
   margin: 0.2rem 0.2rem;
   padding: 0.2rem 0.2rem;
+  text-align: center;
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: #e5ddcb;
   font-family: 'Love Ya Like A Sister', cursive;
+}
+
+h2 {
+  padding-left: 10rem;
 }
 
 h4 {
@@ -49,8 +58,8 @@ h4 {
   background-color: #cf4647;
   color: #e5ddcb;
   font-family: 'IM Fell Double Pica', serif;
-  margin: 0.5rem 2rem;
-  padding: 0.7rem 1rem;
+  margin: 0.2rem .4rem;
+  padding: 0.4rem .6rem;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0.5px 0.5px 0.2px;
@@ -58,6 +67,45 @@ h4 {
 
 .react-button:hover{
   color: #524656;
+}
+
+#go input {
+  background-color: #CF4647;
+  color: #e5ddcb;
+}
+
+#main-button {
+  text-align: center;
+}
+
+#new-delete-button {
+  text-align: center;
+}
+
+#new-delete-button a {
+  font-size: .8rem;
+  padding: 0.1rem 1rem;
+  background-color: #A7C5BD;
+  color: #524656;
+  font-family: 'IM Fell Double Pica', serif;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+#delete-from-trip {
+  margin-top: 1.5rem;
+}
+
+#delete-from-trip a {
+  width: 8rem;
+  background-color: #A7C5BD;
+  color: #524656;
+  margin: 0.2rem .4rem;
+  padding: 0.4rem .6rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
 }
 
 #button {
@@ -113,6 +161,11 @@ h4 {
   text-align: center;
 }
 
+.update {
+  padding-left: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
 #background-img {
   background-position: center;
   background-repeat: no-repeat;
@@ -128,6 +181,11 @@ h4 {
   text-align: center;
 }
 #activity-list {
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#index {
   text-align: center;
 }

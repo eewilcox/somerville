@@ -59,15 +59,8 @@ class Api::V1::TripsController < ApplicationController
     trip_activity.activity_id = activity.id
     if trip_activity.save!
       render json: trip
-    end
-  end
-
-  def destroy
-    data = JSON.parse(request.body.read)
-    trip = Trip.find(data["id"])
-    if trip.delete
-      @trips = Trip.all
-      render json: @trips
+    else
+      flash[:notice] =  'Please select a trip first'
     end
   end
 end

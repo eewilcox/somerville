@@ -1,10 +1,20 @@
-<div id="my-trips">
+<h2><%= current_user.username %>'s Trips</h2>
 
-</div>
+<div id="my-trips"></div>
+
+
+<h3 id="index">All Trips</h3>
 
 <% @trips.each do |trip| %>
   <h6 id="activity-title"class="small-3 small-centered columns"><%= trip.trip_name %></h6>
+
+
+  <div class="small-3 small-centered columns" id="new-delete-button"><%= link_to "Delete", trip_path(trip.id), method: :delete, data: {confirm: "Are you sure?"} %></div>
+
+
+
+
   <h6 id="activity-list" class="row small-6 small-centered columns"><% trip.activities.each do |activity| %>
-    <%= activity['name'] %>     -----
+    <a href="/activities/<%= activity['id'] %>"><%= activity['name'] %>     -----</a>
     <% end %></h6>
 <% end %>

@@ -7,7 +7,7 @@
     <%= f.collection_select(:name, Zone.all, :id, :name, prompt: true) %>
   </div>
 
-  <div class="actions small-11 small-centered columns" >
+  <div id="go" class="actions small-11 small-centered columns" >
     <%= f.submit "Go!"%>
   </div>
 <% end %>

@@ -6,7 +6,6 @@ const Trip = (props) => {
       <h6 id="select-name">{props.name}</h6>
       <div className="row">
         <button className="react-button" id="select-button" onClick={props.handleSelectTrip}>Select</button>
-        <button className="react-button" id="delete-button" onClick={props.handleDeleteTrip}>Delete</button>
       </div>
     </div>
   )

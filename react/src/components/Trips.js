@@ -7,6 +7,7 @@ class Trips extends Component {
     super(props);
     this.state = {
       trips: [],
+      tripName: null,
       currentTripId: null,
       userNewId: parseInt(document.getElementById('ident').dataset.id),
       page: false,
@@ -14,7 +15,6 @@ class Trips extends Component {
       alert: "",
     };
     this.getData = this.getData.bind(this);
-    this.handleDeleteTrip = this.handleDeleteTrip.bind(this);
     this.handleSelectTrip = this.handleSelectTrip.bind(this);
     this.handleNewTrip = this.handleNewTrip.bind(this);
     this.handleBoolean = this.handleBoolean.bind(this);
@@ -103,24 +103,6 @@ class Trips extends Component {
       );
     }
 
-  handleDeleteTrip(tripId){
-    let fetchBody = { id: tripId };
-    let tripArray = [];
-    fetch(`/api/v1/trips/${tripId}`,
-    { method: "DELETE",
-    body: JSON.stringify(fetchBody)
-  }).then(function(response) {
-      tripArray = response.json();
-      return tripArray;
-  }).then((response) =>
-      this.getData()
-    ).then((p) =>
-      this.setState({
-      alert: "Being deleted..."
-    })
-  );
-  }
-
   handleSelectTrip(tripId) {
     fetch(`/api/v1/trips/${tripId}`, {
       credentials: 'same-origin'
@@ -135,8 +117,10 @@ class Trips extends Component {
         let data = body;
         this.setState({
           currentTripId: tripId,
-          alert: "Trip Selected!"
+          tripName: data.trip_name,
         });
+      }).then(p  => {
+        this.setState({alert: `${this.state.tripName} Selected!`});
       });
   }
 
@@ -144,9 +128,6 @@ class Trips extends Component {
     let trips;
     if (this.state.page2) {
       trips = this.state.trips.map((trip) => {
-        let handleDeleteTrip = () => {
-          this.handleDeleteTrip(trip.id);
-        };
 
         let handleSelectTrip = () => {
           this.handleSelectTrip(trip.id);
@@ -157,7 +138,6 @@ class Trips extends Component {
               id={trip.id}
               key={trip.id}
               name={trip.trip_name}
-              handleDeleteTrip={handleDeleteTrip}
               handleSelectTrip={handleSelectTrip}
             />
           )
@@ -168,7 +148,6 @@ class Trips extends Component {
     if (this.state.page) {
       show = <NewTrip
         trips={this.state.trips}
-        handleDeleteTrip={this.handleDeleteTrip}
         handleSelectTrip={this.handleSelectTrip}
         handleNewTrip={this.handleNewTrip}
         currentTripId={this.state.currentTripId}
@@ -180,8 +159,7 @@ class Trips extends Component {
       <div id="tres-buttons" className="small-8 small-centered columns">
         <h4>{this.state.alert}</h4>
         <button className="react-button" onClick={this.handleBoolean}>Create New Trip</button>
-        <button className="react-button" onClick={this.handleBoolean2}>Manage Trips</button>
-        <a className="react-button" href="zones#index">Back to neighborhoods</a>
+        <button className="react-button" onClick={this.handleBoolean2}>Select Trip to Work On</button>
         {show}
         {trips}
       </div>
