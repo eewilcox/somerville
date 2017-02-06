@@ -58,6 +58,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chartkick (2.2.2)
     coderay (1.1.1)
     concurrent-ruby (1.0.4)
     coveralls (0.8.17)
@@ -116,6 +117,8 @@ GEM
       activesupport (>= 4.1.0)
     google_places (0.21.0)
       httparty
+    groupdate (3.2.0)
+      activesupport (>= 3)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.14.0)
@@ -282,6 +285,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   carrierwave
+  chartkick
   coveralls
   database_cleaner
   devise
@@ -291,6 +295,7 @@ DEPENDENCIES
   font-awesome-rails
   foundation-rails
   google_places
+  groupdate
   jquery-rails
   launchy
   listen (~> 3.0.5)

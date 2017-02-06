@@ -69,6 +69,12 @@ h4 {
   color: #524656;
 }
 
+.charts {
+  opacity: .8;
+  width: 90%;
+  margin: 5rem auto;
+}
+
 #go input {
   background-color: #CF4647;
   color: #e5ddcb;

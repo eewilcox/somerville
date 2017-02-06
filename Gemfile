@@ -31,7 +31,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
   gem 'valid_attribute'
-
+  gem "chartkick"
+  gem 'groupdate'
   gem 'dotenv-rails'
   gem 'database_cleaner'
 

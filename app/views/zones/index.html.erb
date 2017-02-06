@@ -11,4 +11,20 @@
     <%= f.submit "Go!"%>
   </div>
 <% end %>
+
+  <div class="charts">
+    <% if @happy %>
+      <%= line_chart [
+      {name: "Happiness 2015", data: @happy},
+      {name: "Happiness 2013", data: @happy2},
+
+      {name: "Community Events 2015", data: @community},
+      {name: "Community Events 2013", data: @community2},
+
+      {name: "Affordability 2015", data: @cost},
+      {name: "Affordability 2013", data: @cost2},
+
+    ], colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#524656" ] %>
+    <% end %>
+  </div>
 </div>

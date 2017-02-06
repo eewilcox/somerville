@@ -15,13 +15,10 @@
   <div id="activity-description"><h5><%= @activity.description %></h5></div>
 </div>
 
-
-
-
-
 <div class="row small-3 small-centered columns" id="button" data-id="<%= @activity.id %>">
   <%= button_to "Next Stop", zone_path(@activity.zone_id), method: :get %>
 </div>
 
+<div class="charts"><%= pie_chart @all_trips.joins(:activities).group('activities.name').count, colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#524656"] %></div>
 
 </div>
