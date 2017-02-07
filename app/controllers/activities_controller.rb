@@ -1,6 +1,10 @@
 class ActivitiesController < ApplicationController
   before_action :authorize_user, except: [:destroy, :show]
 
+  def index
+    @activities = Activity.all
+  end
+
   def show
     @trips = Trip.where(user_id: current_user)
     @activity = Activity.find(params[:id])
@@ -29,18 +33,20 @@ class ActivitiesController < ApplicationController
   def new
     @activity = Activity.new
 
-    @client = GooglePlaces::Client.new(ENV['API_KEY'])
-    @google_info = @client.spots_by_query('Restaurants near 02144')
+    key = ENV["API_KEY"]
+    @options = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=point+of+interest+Somerville+02143&key=#{key}")
+    # @client = GooglePlaces::Client.new(ENV['API_KEY'])
+    # @google_info = @client.spots_by_query('Restaurants near 02144')
   end
 
   def create
     @activity = Activity.new(activity_params)
     @activity.save!
-    # if @activity.save
-    #   redirect_to @activity
-    # else
-    #   render :new
-    # end
+    if @activity.save
+      redirect_to @activity
+    else
+      render :new
+    end
   end
 
   protected

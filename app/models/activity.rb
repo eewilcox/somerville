@@ -8,4 +8,5 @@ class Activity < ApplicationRecord
   validates :address, presence: true
   validates :address, uniqueness: true
   validates :zone, presence: true
+  validates :reference, length: { maximum: 45}
 end

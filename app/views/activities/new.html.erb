@@ -41,7 +41,16 @@
 </div>
 
 <div>
-  <% @google_info.each do |activity| %>
-    <p><%= activity.name %> <%= activity.formatted_address %> <%= activity.reference %></p>
+  <% @options["results"].each do |option| %>
+    <p><%= option['name'] %></p>
+    <p><%= option['place_id'] %></p>
+
+    <% if option['formatted_address'] %>
+      <p><%= option['formatted_address'] %></p>
+    <% end %>
+
+    <% if option['photos'] %>
+      <p><%= option['photos'][0]['photo_reference'] %></p>
+    <% end %>
   <% end %>
 </div>

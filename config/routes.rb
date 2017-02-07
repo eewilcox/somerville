@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  # root "home#index"
 
   root "zones#index"
 
   resources :trips, only: [:index, :destroy]
-  resources :activities, only: [:show, :destroy, :create, :new]
+  resources :activities, only: [:show, :destroy, :create, :new, :index]
   resources :zones, only: [:index, :show]
 
   namespace :api do
