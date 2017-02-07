@@ -1,0 +1,47 @@
+<h1>Add Activities</h1>
+  <div class = "row">
+  <%= form_for(@activity) do |f| %>
+  <div class="large-6 columns">
+    <div class="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </div>
+
+   <div class="field">
+      <%= f.label :address %><br/>
+      <%= f.text_field :address %>
+    </div>
+
+   <div class="field">
+      <%= f.label :description %><br/>
+      <%= f.text_field :description %>
+    </div>
+  </div>
+  <div class="large-6 columns">
+    <div class="field">
+      <%= f.label :picture %><br/>
+      <%= f.text_field :picture %>
+    </div>
+
+    <div class="field">
+      <%= f.label :reference %><br/>
+      <%= f.text_field :reference %>
+    </div>
+
+    <div class="field">
+      <%= f.label :zone_id %><br/>
+      <%= f.text_field :zone_id %>
+    </div>
+  </div>
+
+ <div class="actions">
+    <%= f.submit "Add Activity"%>
+ </div>
+<% end %>
+</div>
+
+<div>
+  <% @google_info.each do |activity| %>
+    <p><%= activity.name %> <%= activity.formatted_address %> <%= activity.reference %></p>
+  <% end %>
+</div>

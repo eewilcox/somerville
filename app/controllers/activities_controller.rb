@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+  before_action :authorize_user, except: [:destroy, :show]
+
   def show
     @trips = Trip.where(user_id: current_user)
     @activity = Activity.find(params[:id])
@@ -23,4 +25,34 @@ class ActivitiesController < ApplicationController
       redirect_to @activity
     end
   end
+
+  def new
+    @activity = Activity.new
+
+    @client = GooglePlaces::Client.new(ENV['API_KEY'])
+    @google_info = @client.spots_by_query('Restaurants near 02144')
+  end
+
+  def create
+    @activity = Activity.new(activity_params)
+    @activity.save!
+    # if @activity.save
+    #   redirect_to @activity
+    # else
+    #   render :new
+    # end
+  end
+
+  protected
+
+  def activity_params
+    params.require(:activity).permit(:name, :address, :description, :reference, :picture, :zone_id)
+  end
+
+  def authorize_user
+    if !user_signed_in? || !current_user.admin?
+      raise ActionController::RoutingError.new("Not Found")
+    end
+  end
+
 end

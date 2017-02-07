@@ -18,7 +18,12 @@
 </div>
 
 
-
+<% if @place %>
+  <div><%= @place['result']['rating'] %></div>
+  <div><%= @place['result']['price_level'] %></div>
+  <div><%= @place['result']['open_now'] %></div>
+  <div><%= @place['result']['website'] %></div>
+<% end %>
 
 
 <div class="row small-3 small-centered columns" id="button" data-id="<%= @activity.id %>">
