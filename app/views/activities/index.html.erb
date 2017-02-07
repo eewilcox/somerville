@@ -1,0 +1,13 @@
+<% @activities.each do |activity| %>
+<ul>
+ <div class="row">
+    <li> <%= activity.name %> </li>
+    <li> <%= activity.reference %> </li>
+    <li> <%= activity.id %> </li>
+    <li> <%= activity.address %> </li>
+    <li> <%= activity.description %> </li>
+    <li> <%= activity.zone_id %> </li>
+    <li> <%= activity.picture %> </li>
+  </div>
+</ul>
+<% end %>
