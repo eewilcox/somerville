@@ -82,11 +82,11 @@ class App extends Component {
         alert={this.state.alert}
       />
     } else {
-      button = <a href="/trips" id="first-time" className="react-button">Create New Trip</a>
+      button = <a href="/trips" id="first-time" className="react-button">Create Trip</a>
     }
     return(
       <div>
-        <h6 id="row2" className="small-3 small-centered columns">Current Trip: {this.state.tripName}</h6>
+        <h6 id="row2" className="small-3 small-centered columns"> {this.state.tripName}</h6>
         <h6 id="row" className="small-12 small-centered columns">
           {currentTrips}
         </h6>

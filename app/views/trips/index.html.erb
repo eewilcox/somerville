@@ -2,20 +2,18 @@
 
 <div id="my-trips"></div>
 
+<% if @trips != [] %>
+  <div class="charts"><%= pie_chart @trips.joins(:activities).group('activities.name').count, title: "Are You In a Rut? - Activities Across All Your Trips", colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#524656", "#e5ddcb" ] %></div>
+<% end %>
 
 <h3 id="index">All Trips</h3>
 
 <% @trips.each do |trip| %>
   <h6 id="activity-title"class="small-3 small-centered columns"><%= trip.trip_name %></h6>
 
-
   <div class="small-3 small-centered columns" id="new-delete-button"><%= link_to "Delete", trip_path(trip.id), method: :delete, data: {confirm: "Are you sure?"} %></div>
 
   <h6 id="activity-list" class="row small-6 small-centered columns"><% trip.activities.each do |activity| %>
     <a href="/activities/<%= activity['id'] %>"><%= activity['name'] %>     -----</a>
     <% end %></h6>
-<% end %>
-
-<% if @trips != [] %>
-  <div class="charts"><%= pie_chart @trips.joins(:activities).group('activities.name').count, colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#524656", "#e5ddcb" ] %></div>
 <% end %>

@@ -27,7 +27,7 @@
                 <li><%= link_to "Admin Activity Index", activities_path %></li>
               <% end %>
           <%else%>
-            <li><%= link_to 'Sign Up', new_user_registration_path%></li>
+            <li id="ident" data-id="<%= nil %>"><%= link_to 'Sign Up', new_user_registration_path%></li>
             <li><%= link_to 'Sign In', new_user_session_path %></li>
           <% end %>
             <li><%= link_to 'Create a New Trip', trips_path %></li>
