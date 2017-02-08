@@ -42,15 +42,16 @@
 
 <div>
   <% @options["results"].each do |option| %>
-    <p><%= option['name'] %></p>
-    <p><%= option['place_id'] %></p>
+    <p>{name: "<%= option['name'] %>",</p>
+    <p>reference: "<%= option['place_id'] %>",</p>
 
     <% if option['formatted_address'] %>
-      <p><%= option['formatted_address'] %></p>
+      <p>address: "<%= option['formatted_address'] %>",</p>
     <% end %>
 
     <% if option['photos'] %>
-      <p><%= option['photos'][0]['photo_reference'] %></p>
+      <p>picture: "<%= option['photos'][0]['photo_reference'] %>",</p>
     <% end %>
+      <p>zone_id: 1},</p>
   <% end %>
 </div>
