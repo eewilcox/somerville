@@ -1,172 +1,203 @@
 seeds = [
+  {name: "Five Horses Tavern",
 
-{name: "99 Restaurant & Pub",
+  reference: "ChIJN31rBiJ344kRprkdKBCL690",
 
-reference: "ChIJk4ucEthw44kRFTXgpkYiG1g",
+  address: "400 Highland Ave, Somerville, MA 02144, United States",
 
-address: "20 Cummings St, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAFwSXKNXIVZtZmT4O_9ayOJNNvy1HNfWjtIz_phQ0aOJmaqYKBfrrGuP99pSMV60VFgBvXPJN0E0tBo3cP8L-ht4jCxV-b7NmLXJenN1omyTTjsTT30RvHAohh6tpf608aT9im0mNn4KxJjtH33pnEpaAk8kmO0Bzwmb3tOPQSIqEhCCmUBEfqfrWbE2QPdDm6DCGhSqrfqMtgjhN7BpEKk7CrpsL-5dzw",
 
-picture: "CoQBdwAAAI3B4GaKZcRAMBt4itC3cSVXdCMj5D5lV_j-zkij-E_vlpcuIlCmIUlIQliJZ7zr9EMng9XSfvwQDI471ah8JPFk1eerNnOCRo6M-edDJjjSPECSWgPOU1xvBlPoFay3Alckjgkpkp1tIHnQ0oV_4nRI_Ypx0NrH6UPk3A89ndVyEhAPgkH3N3p7dKMgcz-tSnY3GhS6B_P24-Neq8Z_c8QH9mNIlgZhAw",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Flatbread Company",
 
-{name: "Papagayo",
+  reference: "ChIJub7E3Rh344kRrFryuCFj0Fk",
 
-reference: "ChIJIxAmFidx44kRdgpUgdMpWT0",
+  address: "45 Day St, Somerville, MA 02144, United States",
 
-address: "331 Great River Rd, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAGSttYzjPiGgrueRusXKCUV4U0fnSXqxWXB89hV8fdyU5H6Q0_MsUnkokmdW4US3jG0zgcXLpQE4qtdRp-stuuHYW-Yr6WWIC78ILnbbGoo2xCF_yJDe7OX5ZRz8Lbk1Ij48vKJl9o9VyFKYn4qKm8NvzNAl67OXsAn9JAbzSkEzEhAghuJucYeeWi_6t2fzWrxrGhTozRfjEgWJGgdLMnJtRCjbw1RTnQ",
 
-picture: "CoQBdwAAAIWhpAvUMD9pdCDopYqhhae-23Ap29_ZhfT6syF7T_JCbuMLXSUF9ifv6x7mVFeK_RJH8hopgiWfO1wVnfWHiVsahyC7ImxjlAn3BvZ9upxiTuKRQqikYPh_jCCDcATg4bXg1jty-VuxQb8Jx4cy-3dnzPclOaIZ3335m2UDrtxYEhD4rorbpsOEuUhz-NJ4utdJGhSy1YmtbK6chGdDPRLsE5WULEYcGg",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Amsterdam Falafelshop",
 
-{name: "Sarma Restaurant",
+  reference: "ChIJGYITuxh344kRnCGOxInkRIM",
 
-reference: "ChIJ67tplNJw44kR--jFyZ2szbg",
+  address: "248 Elm St, Somerville, MA 02144, United States",
 
-address: "249 Pearl St, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAJoWbX570AgzDyg1TsOjeUCX5n8Qv898aLWi16HFOXD6Jx5f8yIKGzOCjtdj4mmj_IyNfCjFr_AybkYeaesAuc9Tbcqp1WOK3ivB8k2F8ATvBnhRV5GvC3lN6N2J-YnGSmXrqEDCps_kKGm6ZBv_0JNO2W_FPdomX3WY3a24RDXZEhD36fGqG-6YvSeBpuJrgphnGhRUdZ9XiJ_VRUT9jE57t1WGBkpdyg",
 
-picture: "CoQBdwAAAOoXZ3Pg6aldcX2Ih41-oCYzAqraQnYHxZuhTG1n48F2YrMosSoUA_5aS4idHNOdZOPul6M9l0zzfdh01sBsYM55DPgRukOZfv1cM5whjKdnX3gESS2bIjydVRVCM1tIWWJaDFVeXpbhrKIeFKbgUKj4cmTG4mJ6IB7rZvoIdDnSEhA9LAE9FrXH-wPffiIARzyuGhTx06crVeFEvor0m4ZwPSQ_kLkdOg",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Pokeworks",
 
-{name: "La Brasa",
+  reference: "ChIJex1WpRh344kR1DE_rYQc4ik",
 
-reference: "ChIJgw9fYdpw44kRPEiS00H4l5U",
+  address: "261 Elm St, Somerville, MA 02144, United States",
 
-address: "124 Broadway, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAA9ylZ2-VDZLPQRh8D0JQwF7oYMl8-AaE9FOSzIdEqIN-zw55oSRWi_lgdSEHwHqqoIWVZfMu67eoqvgJyV3f33-i2SIvZq4GKXvdjJlx7p2TTcVwo4uXDVO8_toa_2gWdg5m6GxxpfY9EmXSw2L8dL8mWDF30kB4_tpG2M8KUgwEhCgLsBC2pUxFL7ttWLccMkhGhSo7ngDi5HeFyxR7pP-j2ZTEUp6iw",
 
-picture: "CoQBdwAAAD2xLtL0N3mrp9vRa30UkoNkDNF58-0-7xmABYfa4BfGVgOJqrnmpkjsIknWZXHBj_mnUqs_LD7AKu9pzRy9RRKBp2n8pUKIAHCtZRclFx1gJnCEt6vJBrcFFcgx4Hyob8NDNpiVOAH5clh07OT2kZztWg23zxZSRDFxEoFdLv4bEhDEzckfiXY8JCv76-gbZnC2GhQmyQygePJlt0HpmywBi2hGnJ9-0w",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Posto",
 
-{name: "Legal on the Mystic",
+  reference: "ChIJJybumiJ344kRfzNhL_5T8RI",
 
-reference: "ChIJIxEDFidx44kRLwrUwS8QoFw",
+  address: "187 Elm St, Somerville, MA 02144, United States",
 
-address: "301 Great River Rd, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAJ16lX5dGUSbD-IX8suwqpOldm48VHPrW2b3Rv0cgM_y6y5h18XUKFxZQgVHf2aMuxL75_uZqk53CXrFubHSJ7UgxWcRxNG_lPIG7meOFNfINHdVbqlkDKjCA3UeMLe8T-qD9qXENaqTNOme8IKBZvK-qBrdQRs8N0c8EjnhFIAfEhBufBYJPf7lBaKzT1HL45DaGhTFIrjn9JVvJkJKyVsOz67Dceu-tA",
 
-picture: "CoQBdwAAABUTtYWRQVqCBJyF29PQKpGSbofjUVgFihh4C-TQaR5IUISoLm3qijbH5XZ51DAWD0rGWEFnQ6ppvEjhBLk9VuFBVcS6-9TRag_MglzU1ummCai-9DwoleDm_St4YISBilaTu1BQGehlGB5I10vBAFW2luPQ2GtmrH5Pofg4NeEyEhCSlLGDV9wJeVFgd7eblnzwGhQ6vPRUmCFc5ImZPjrWc0CoDQdHMA",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Martsa On Elm",
 
-{name: "Mount Vernon Restaurant & Pub",
+  reference: "ChIJr9rKnhh344kRK08Akv-bsfU",
 
-reference: "ChIJ0feWktxw44kRMPIGmSD8rU0",
+  address: "233 Elm St, Somerville, MA 02144, United States",
 
-address: "14 Broadway, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAMrwjiI24oqWlnqHCcJyWasg0ipR1VBGhT5Mzru8tpJwUugFznwJ-d4cFkLMVddxpQrEEFobgmxytRObV4zKi6VX1uFyXRKPaSoeOyAwOu_aG1f65bKXuCSJiDFYNwjV82GqeaoO26SM2yEiUA9LympQxIayRzM0dL_M9JmztOzZEhAbNrFys0QTrvCG3BHWd6ecGhTJW50TnqnEfLogG2ZtMq_hY0SdfA",
 
-picture: "CoQBdwAAADugGIT5jnDKHNW2SrYoCQjejg5WZhU-vZJJyRGOOmFZQJ1HtRSF5QJbUTd3Rw3yD3U-W0mh-6Vkde_BDvIVoLRUbD6Un3-dMCMbN9zznqWUzemxC7_rxuerxSsLNlJTrW28f6KH9gOVO_6Sa_3NUWBNE-SNZ6_U706nW8RmXdcFEhBVSTxXt2W0zPMbebK3-yU5GhQx7Rs17HRfAesFiqVBgi-ftPvfyw",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "The Painted Burro",
 
-{name: "Tasty Mo:Mo",
+  reference: "ChIJPdZYghh344kRetaNwFaW-QA",
 
-reference: "ChIJpS14iCl344kRyuq4xfAZDs4",
+  address: "219 Elm St, Somerville, MA 02144, United States",
 
-address: "02145, 503 Medford St, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAAWVnBGHT_AEYwhT1RMLw3dNs9ScqLDE2We0iZr_H5tZegtGfFpxI2s-dl1hzVHGMICzxjtw2HEfEfjzhyaODDpIR5ZC-aAEEENXLhXi0rdnP7oXuW-yzkmoaqM8S7hxHUFwXKM3FjWQ13aZXEekhkjQ3fWCWTqcqxCHoQss2IdOEhBqK_s2fe3NbNf6bmUHbkj8GhRgVnOERTxvEavNxWQA3oHCmU4xqw",
 
-picture: "CoQBdwAAAJXkxDjDW0UMTUQZYGOZwV5Yo7gqYavkvWNYG8ZN0qzxYwv78tyNDmMsXoEV6z-UZvdiCIy8kFHxyV9gjKeHZfJ4FbMaUaJM0iw7MF3cFRz9j3wQOuH87R2T2iQSnEbl3kJ8I8rTBUoOU-ThgXY4a5iKroWdE39-N8oLyZf_b9gNEhDtDaVXc8nSCnUY3oKNFinQGhR34U_LvmGDlMY69XbljESma5BTEw",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "True Bistro",
 
-{name: "Southern Kin Cookhouse",
+  reference: "ChIJiXi7iuF244kRLsmbrujci7o",
 
-reference: "ChIJpb25rCBx44kR1dkjIpzehaM",
+  address: "1153 Broadway, Somerville, MA 02144, United States",
 
-address: "500 Assembly Row, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAIUjQQqVi4hLEPxCi9qBSGZ3YhCHYnGreFEXhwWaK4qq7JUMY9Q9PtpluDwIJQ0sgRhfQOK1UMBZkXpNNHrZvSp473iV5RVQuWuV-RVHQFMng2D-4inbLKnVmqbu-y1FJ_4L0GakgoiW0ainNa9kU2AULUCLIBi69J1zqtkpuQx4EhA30WJAEtUc-zTA7RgvtsYgGhRp1fr0S6oKAh6Itd5asiBoeOB6cg",
 
-picture: "CoQBdwAAABP-P2vCpO6xG1c7NlrBl7wsR447TEyuhNxuUgsE3wO1mW4gw2_ccDiW_qILj7ukGiM-oASDY3ulK6nJeo-ldHaKUo3Meoz1xNNQ5Og0vgcV0OW-J-woQK4EXd0fLMCl8mS7PrQzrJmvMvgPRHQjJL5V_dx7fxE3W-cC_r0E3wAvEhC4aaUQCcrNqOk52ApYTu4WGhQFH-EOIaHpJ2u-lnKloe0dfBwDGg",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Sugidama Soba & Izakaya",
 
-{name: "Vinny's",
+  reference: "ChIJbUyovxh344kRy0bCs_s60mU",
 
-reference: "ChIJ4RxWD9tw44kRfnBBHjLukwo",
+  address: "260 Elm St #106, Somerville, MA 02144, United States",
 
-address: "76 Broadway, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAACglMZCzqymc8saYw27zmrRfm3ypPJRINXdwHusgl1JOKJ19i3VGFq6E6CgqQiaKDsL9m3AhbfDqhoeN4uEM3TXekeFE6jTeH8HDPNCpIrdDHhy2AbdY4tdtzBh-9rsp9c7SJfuPBPWmZtcliIITBTuPO7OCCJjfRajkeDx8pi8FEhB99p4Cb97URnrZ9TmCeMu4GhSL7eK9vXSUZ-8_sC5_btbHUGtc7Q",
 
-picture: "CoQBdwAAAFPY31pjNWZSmZXuSnnFx8cZqL7XCyKt5OlAcCNFE0pZc1fzbDEPR3vBLT9bZmaNSHDQB_K70d5OZFC06WlDh-cOze6MY74Mc3q52bij6pqJaYEMpWIPwFq6eeTFMLMq06Be3PjqQd4hBIPNPptPp3hAvTTu3mVA6Ofx18WgLWxZEhAGVsfCdHrSjxGtlhJg6NO5GhRItLfuLvExxlxn2oanNcr374vO7A",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Tenóch Mexican",
 
-{name: "Alfredo's Italian Kitchen",
+  reference: "ChIJYw9-PiJ344kRjjLFFzSlBFI",
 
-reference: "ChIJqa5hD9Rw44kRM7u1OVo4M94",
+  address: "382 Highland Ave, Somerville, MA 02144, United States",
 
-address: "284 Broadway, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAALCn-KivuQIOWl2Bmj37uuK4wfXYb-HLtM3XWllWqaEzrsuKeFQEg5yHWiO4ZiuaKaBPZSDESxk1vdyWRzxQoJ412ZGEbY2Tz-Ekdc7VUvB-drSHDj6wfGa1hFhiZuJuNzL7ypezkAgcYlNAQ9AEF2CWd6PeSrN3Lovi0kVwoqLREhAR9srrFmVWVAVqNxzRqrU1GhQcqN7C0w0EckCrHigsYHnS0AyEhw",
 
-picture: "CoQBdwAAAJ9WIcQxHi8sN7S6mdO5LvBm1NqjG5dBUqPQEBEM4LH4XlTnWw8kQX2hz0AGbliz0rhSjhI5b9gJfdWxWxABuFzOh9y0Ia_KhnvWvSJOsRNvofTsmfxZAxkfZS1pA6CPN4FGexCf9xae9rSuIZvQrpyrVlaHQKrmci4Um2g6W3hbEhA2jVi_FczawNCmRSWIJ0quGhSruvx-PwA-NPA638-pqEwoBh0s3A",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Pepe Bocca",
 
-{name: "Fuji at Assembly",
+  reference: "ChIJs7iYrhh344kRcx2UxESpG0g",
 
-reference: "ChIJKTzYVidx44kRAJwSUYgcfuA",
+  address: "414 Highland Ave, Somerville, MA 02144, United States",
 
-address: "320 Canal St, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAIKIL5LTDlWzYLuWa07Rlv9qotkrvzjuY5GhHRyZI8gb3fjI6A0Z7r4kEOaMlUDcxlWpKWzR2GL1gJHXgymFyqSd2NuuZ9L_1lWVazsEpdPYR4Ppzo7l0UKU44qy2s6Vt2LG2i8j6oW0vjd0p2HmEnMLoVOt3F-9RGz78E-Ho9lKEhABOXscWeiDFOIGRJiQ6IGAGhQuK2T4nG2ItqBCSH_1UnRtuDpzUA",
 
-picture: "CoQBdwAAAI0UM1tQssziYs6d8XBsBvTkzdLN4GGeR_zkTZOdgoXW0E1x9Ty9YbhhIoIqZ6xs_-VXxqk90YjeTFUDxfFiLWNLLx6chbJJVtTRQUF4Gz9FJCouejKVtNdDPd95ELMIS_3g9v6_dkg9N0RfyNLygqgyiOZwrv7MV_z1RUTPjxyDEhBxfxxjx4eI0BnGnZaEEGMqGhQIFDgcV0TlSO7mdOVZGnoHlGwTTw",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Redbones Barbecue",
 
-{name: "Fat Hen",
+  reference: "ChIJnzZAlBh344kRW4Sq7To2alA",
 
-reference: "ChIJf_M5Y9pw44kRuMmmh5GnXUY",
+  address: "55 Chester St, Somerville, MA 02144, United States",
 
-address: "126 Broadway, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAJ5fGqZmnMlfd2CS1NXuN7eXT-3bkLSGtLLgY40sztJPs1ZpS8-xEYJ3t4QkWoh_Ck01WR0de09E-ExsTWGdvlaK4eDDRCQBKtTcl0z2ZmxW4imGMuYpu_z3xKw7ao9BimZn87OHjLQnxQ3dBcjd3I1pQi1EgP6arLebjbRUdGSlEhAYUi4yAbZ2hGis4_t3dc_HGhSRxu_BxFk1yuRE1RBJdXFX5U8_nA",
 
-picture: "CoQBdwAAAJNcnahvMxGT59nwT8t22EpmYX5CPHmpVnX4SmeKjkp5IYME93bBxj_Rbvbu7wpceiG579O7l0-8yBA5ZRbrUgw2_ddMU4gcr86zlTc4-Y6VXg8-dJLCD9tLcyrDZt2zQENpdjm9z7Wqktak92ZvXdZgXPoa7UiOkf22WBMUt62GEhBtMKon6TQ99TPcEG3BesdXGhRrbnXyVDmTMs3f9CHBs732ry_ZHA",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Orleans",
 
-{name: "Royal Bengal",
+  reference: "ChIJXbzsHR9344kRAAW6GtUHViM",
 
-reference: "ChIJYXKcMi1344kR4jSzwULTk5c",
+  address: "65 Holland St, Somerville, MA 02144, United States",
 
-address: "364 Medford St, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAADfHAe3_gazq4ob_8-Py5oSQLReVx2vFuQ3Q0nOYf9x44WZAIPCKahd-eBpuN1RJKai_yfGR2wTRQlpvtlkd_X5GVHy_OJvAzAuuMIVY2Plv24oh9WsVIrGHHCieJD31VtrVTOXybkA5c847AKi64daT76xEmti1SGAOio2-rr_MEhDp9QlA5qVqFiVz0PFntR7zGhSzoRJaHRJfDisod_fWj8N2BPk9mQ",
 
-picture: "CoQBdwAAAAwY4OL8oJNqn7LhBJeKZJdbnvEGp4nJPGHJbbFjoQY8DgTAydtyG26m6bLnYmH52Ao90ajSMvatLvhf97Mpp7TI85h5e7XApbuB6uqm-OiMmTZ5hArgTeB3JSi0pk40CIjgbV7L7kFMUEwjEEe16OWsgsfZs1CVKsHPkespNVcoEhCScT97q2TfxnomnKEUhRLWGhTvQACyz8FTcv4LgwP4QJ1Uj1gDTQ",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Istanbul'lu",
 
-{name: "Los Paisanos Restaurant",
+  reference: "ChIJPfJu9-F244kRkBnEnaXXOQ0",
 
-reference: "ChIJ2cSvc9tw44kRUKnF29-Q3bo",
+  address: "237 Holland St, Somerville, MA 02144, United States",
 
-address: "62 Broadway, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAGhmqUjqoXM9KgLe7V2rxGFwCteERI9DqIHkESTN-Ns8B-uBOzYEnd3FZ52TUaaxKbvmqPkCgnQ91yhZq20VscuyAmxpswVPfzlhNSr6rn6YHRReu0-1eFV4tyxQ9J5wjdPQxBtoDw541FalUwFXQ1baNatZ4Pl4jwrPC801y4bpEhDK7MZpGzbrQgKJ38LUGBbUGhT6T-Ilx1Lh9IsyrTKMxccwaI1yFw",
 
-picture: "CoQBdwAAAAyEzhMu5PXfucj6ncM5IUBawL4T9fId82_w-dyDB9MlFTiqRpuFKhlgPylXLdYT_tvyvgPAHZNwR2BLoxIjKqsXbqj4EZZVSBL0nHdxudep7WxC5XK0hL52ILFmsonKEdtK8QtiHG6Sxm_-zljG_m_bmOO2sRYnmsWfisFfJE4xEhBxkoY6ImVyUdp9dbHXZ3lkGhTN40UC5Sajzf8URaG729XggxjpNQ",
+  zone_id: 2},
 
-zone_id: 1},
+  {name: "Tu Y Yo",
 
-{name: "Mr B's Pizza Restaurant",
+  reference: "ChIJ_cjpe99244kRXl3v3dt0db0",
 
-reference: "ChIJ2xK-vs5w44kRwChyQFxpAPI",
+  address: "858 Broadway, Somerville, MA 02144, United States",
 
-address: "142 Cross St, Somerville, MA 02145, United States",
+  picture: "CoQBdwAAAFXEDsAnJDI7GjwYjJuQI4fh0fQmftwfbRlWs9jBaAo037xwY9Nvb2BIyMWi_gB25X_1PZIey2kJh8N1SVnZFUMmDZf8N07k6TaGJtbjja1arSj7kR_0zPAaWpXADNxAb6rZVmFtHNHQ-MiLCYVu1SNye3ddGDtCnN-Q5peW0R-PEhDAEptVY0yn5UCOIbJei8eeGhS-T3KdD9RTHx1KwRWIgR5ePtoCgA",
 
-zone_id: 1},
+  zone_id: 2},
 
-{name: "Falafel Place",
+  {name: "Taipei Tokyo Cafe",
 
-reference: "ChIJdSyi1ip344kR-1t35FYXRL8",
+  reference: "ChIJeVDgNh9344kR0qOxYyOUFM8",
 
-address: "1 Main St, Somerville, MA 02145, United States",
+  address: "7 Holland St, Somerville, MA 02144, United States",
 
-picture: "CoQBdwAAAB_PFsgNOK1BJ1bDZkaCgJjpusni3eQ98Ns8rZUylUIOuFSPw5lqHU8mvbK66BZxbGoSr1QDi8-qJyfjiebYWDpiyrU8a_3tbnqmdNtl5SgP3O0j4X6-fd_9Ox_h8vC7rkqzkvdPwJIqNfRyJsCRH3D72m73zE2M4MQPmYZTac0QEhBJyICCp1MMys1082_uYw0xGhTP-syjpUeTqDu1w4bPiEcbe1dovA",
+  picture: "CoQBdwAAADk8ipBNo3fK_aktTYbLxGVCGhvflGq_TSAPwh2KTOz0zrzsjs3dfTEc1x3nwHhKlm2cYaKQrfZD628T1rE-ZvEetw-91ZWK6CSNHiKgOpCe8uGHuQtNfFJtXTPhB_5dFri8nA7wsHvoyhySjlWdWqrJBLfJI96Z1nGqRD1xoR3hEhCHmFyDJ5iLL7kdecvNPe1xGhS_NVqCr42gRqlrd-A2m-eX9q1ybA",
 
-zone_id: 1},
+  zone_id: 2},
 
-{name: "Maya Sol Mexican Grill",
+  {name: "Anna's Taqueria",
 
-reference: "ChIJ5dyPltBw44kRfHg2YgGDaHQ",
+  reference: "ChIJ4dffabNw44kRH5zwVu9Urfk",
 
-address: "179 Broadway, Somerville, MA 02145, United States",
+  address: "236 Elm St, Somerville, MA 02144, United States",
 
-picture: "CoQBdwAAAI7zalKys9qmvQTqjTtby_Ur_fLXzRed7ETueZ6rTBo8EAySEIyPdZVpAOfsXZEOej6ATUQn24RmB6p8KZzPMecyc79az84wnUA-IYT-uIC1WTIJVlJUF8rqCOlFRSK_lLjTft8p2iwf3Q2zDPrStmFkYw3k4xlMAn9u1SqemEW3EhD2WRFIgAT7UmO77EzOwssbGhQzO-E0PUdHfDA9q-kp3RUTBP1yEQ",
+  picture: "CoQBdwAAAA040VG9IgdOsZl3EqLB_uJu5GZoDxtDP_503q23R2_tCSI_xutQBpditA_Vf96kwafKB8ejCPZO_u4nFMHjlDaYtCs5BuxIq_lYLQH507_hMsACdgpJKyaZq01F5IpPV9YnZwA0FVDb6T0x06mIOlWmO4uF_w7zB6Nc_qudxmSuEhD9GXazUhbmzs_ry28H1d5NGhS9_2oU99OYWHRtMkBpa1sA6y4a6g",
 
-zone_id: 1}]
+  zone_id: 2},
+
+  {name: "Oath Craft Pizza - Davis Square",
+
+  reference: "ChIJX2jwtxh344kRG3tzIUzV1rg",
+
+  address: "280 Elm St, Somerville, MA 02144, United States",
+
+  picture: "CoQBdwAAAO7-H1ff71UXxCUOzh2rAJppmm-zeagt9K_XuhBwAIjdFEzSRF3SrqcviALJWdT8_snxQG1ly-w2A49j8pnS_JuwEyawrioqqYNZokRbxlABCVi9OUt9P4dpY_MHp52GIxI3J15_XEKtlLPbeQ3Txj1hNKX7OWkocutGlmuysRCtEhDa4MgO9pq5W8NyHMCi8CvIGhRcpuaOpVYo3vZQLzrTThf5zOYONQ",
+
+  zone_id: 2},
+
+  {name: "Sabur Restaurant",
+
+  reference: "ChIJlWsbAh5344kR9WP1XAAth0w",
+
+  address: "212 Holland St, Somerville, MA 02144, United States",
+
+  picture: "CoQBdwAAAIq3ILizHtjMqTbojMRtzsaXmO77Zg1E4wtBa7wGvSYlHKhee4zCDr1dR2_QUJ17VN6CtqUUza3N-ajWNUjyRA5dHcuxBOm9fToty6dOtPKwwXsMz7-RKbX9DmdlEMVPG2JEy_hTX8TWv92OqsQyM9I3a-enDO3oKqtzuErayGerEhBRXgbXn8I_8cYihNTDaT0tGhSmMbP4gp5e_DYHOiLnIoGM9zro5w",
+
+  zone_id: 2},
+
+  {name: "Pescatore Restaurant",
+
+  reference: "ChIJ54fhd9h244kRaG80qA0bwQw",
+
+  address: "158 Boston Ave, Somerville, MA 02144, United States",
+
+  picture: "CoQBdwAAAJS4sGIs4_ijYMoSFCcuY_1FYrE1dfQNHDPK8_3EFD6yIBZWTdr9ydi7yJ8ed8wse3_YA6WZOH2JfZg3aT_I0freQV8eRFITuAdlXSdrVvoC9UevwEIdLZ8RgYH4NF0sKnAjWXZDb6N-FSLNYUrNwgJbviiSCXPDITEZ6VhT0tH6EhBCcLk2c91_OfagpOsoIpnoGhTLIkUsYj4CICOcM4sB_fys0asIjQ",
+
+  zone_id: 2}]
 
 seeds.each do |activity_params|
        activity = Activity.new

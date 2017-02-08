@@ -15,11 +15,10 @@ class ZonesController < ApplicationController
     @activities = @zone.activities
     @activity = @activities.sample
 
-    # @client = GooglePlaces::Client.new(ENV['API_KEY'])
-    # @google_info = @client.spots_by_query('Restaurants near 02144')
+    key = ENV["API_KEY"]
     if @activity.reference
-      key = ENV["API_KEY"]
       @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
     end
+
   end
 end

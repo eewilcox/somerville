@@ -15,10 +15,25 @@
   <div id="activity-description"><h5><%= @activity.description %></h5></div>
 </div>
 
+<% if @place %>
+  <div class="google-results">
+    <div>Review Rating:  <%= @place['result']['rating'] %></div>
+    <div>Price Level:  <%= @place['result']['price_level'] %></div>
+    <div>Website:  <%= @place['result']['website'] %></div>
+  </div>
+<% end %>
+
+<div class="google-results">
+  <% if @activity.picture %>
+  <img src= <%= "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&photoreference=#{@activity.picture}&key=#{ENV["API_KEY"]}" %> >
+  <% end %>
+</div>
+
+
 <div class="row small-3 small-centered columns" id="button" data-id="<%= @activity.id %>">
   <%= button_to "Next Stop", zone_path(@activity.zone_id), method: :get %>
 </div>
 
-<div class="charts"><%= pie_chart @all_trips.joins(:activities).group('activities.name').count, colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#524656"] %></div>
+<div class="charts"><%= pie_chart @all_trips.joins(:activities).group('activities.name').count, title: "Saved Activities Across All Users", colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#524656"] %></div>
 
 </div>

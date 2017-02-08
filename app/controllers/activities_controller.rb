@@ -9,6 +9,11 @@ class ActivitiesController < ApplicationController
     @trips = Trip.where(user_id: current_user)
     @activity = Activity.find(params[:id])
     @all_trips = Trip.all
+
+    key = ENV["API_KEY"]
+    if @activity.reference
+      @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
+    end
   end
 
   def destroy
@@ -34,7 +39,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
 
     key = ENV["API_KEY"]
-    @options = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+Somerville+02145&key=#{key}")
+    @options = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+Somerville+02144&key=#{key}")
     # @client = GooglePlaces::Client.new(ENV['API_KEY'])
     # @google_info = @client.spots_by_query('Restaurants near 02144')
   end
