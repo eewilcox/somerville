@@ -1,10 +1,10 @@
 <div class="overlay2">
-<div class="row small-6 columns" id="app">
+<div class="row small-7 columns" id="app">
 
   <% @trips.each do |trip| %>
     <% if trip.current %>
-      <h6 class="small-3 small-centered columns">Current Trip: <%= trip.trip_name %></h6>
-      <h6 class="row small-6 small-centered columns"><% trip.activities.each do |activity| %>
+      <h6 class="small-7 small-centered columns">Current Trip: <%= trip.trip_name %></h6>
+      <h6 class="row small-7 small-centered columns"><% trip.activities.each do |activity| %>
         <%= activity['name'] %>     -----
         <% end %></h6>
       <% end %>
@@ -12,12 +12,14 @@
 
 </div>
 
-<div class="activity row small-6 small-centered columns">
+<div class="activity row small-7 small-centered columns">
   <div class="activity-name"><h1><%= @activity.name %></h1></div>
   <div class="activity-address"><h6><%= @activity.address %></h6></div>
   <div class="activity-description"><h5><%= @activity.description %></h5></div>
 
-  <div class="map"></div>
+  <div>
+    <img src= <%= "https://maps.googleapis.com/maps/api/staticmap?center=Berkeley,CA&zoom=14&size=400x278&key=#{ENV["MAP"]}" %> >
+  </div>
 
 <div class="google-results">
   <% if @activity.picture %>
@@ -26,11 +28,11 @@
 </div>
 
 
-<% if @place %>
+<% if @place['status'] != "INVALID_REQUEST" %>
   <div class="google-results">
     <div>Review Rating:  <%= @place['result']['rating'] %></div>
     <div>Price Level:  <%= @place['result']['price_level'] %></div>
-    <div>Website:  <%= @place['result']['website'] %></div>
+    <div><a href="<%= @place['result']['website'] %>"><%= @place['result']['website'] %></a></div>
   </div>
 <% end %>
 
