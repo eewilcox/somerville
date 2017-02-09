@@ -30,7 +30,7 @@ class ActivitiesController < ApplicationController
       @trip_activity[0].destroy
       redirect_to @activity
     else
-      flash[:notice] =  "This activity is not in your current trip!"
+      flash[:notice] = "This activity is not in your current trip!"
       redirect_to @activity
     end
   end

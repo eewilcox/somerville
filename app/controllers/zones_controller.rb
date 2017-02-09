@@ -16,7 +16,7 @@ class ZonesController < ApplicationController
     @activity = @activities.sample
 
     key = ENV["API_KEY"]
-    if @activity.reference != nil
+    if !@activity.reference.nil?
       @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
     end
 
