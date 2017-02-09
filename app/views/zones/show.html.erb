@@ -1,4 +1,5 @@
-<div id="app">
+<div class="overlay2">
+<div class="row small-6 columns" id="app">
 
   <% @trips.each do |trip| %>
     <% if trip.current %>
@@ -11,16 +12,16 @@
 
 </div>
 
-<div id="activity" class="row small-6 small-centered columns">
-  <div id="activity-name"><h1><%= @activity.name %></h1></div>
-  <div id="activity-address"><h6><%= @activity.address %></h6></div>
-  <div id="activity-description"><h5><%= @activity.description %></h5></div>
-</div>
+<div class="activity row small-6 small-centered columns">
+  <div class="activity-name"><h1><%= @activity.name %></h1></div>
+  <div class="activity-address"><h6><%= @activity.address %></h6></div>
+  <div class="activity-description"><h5><%= @activity.description %></h5></div>
 
+  <div class="map"></div>
 
 <div class="google-results">
   <% if @activity.picture %>
-  <img src= <%= "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&photoreference=#{@activity.picture}&key=#{ENV["API_KEY"]}" %> >
+  <img class="back-pic" src= <%= "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&photoreference=#{@activity.picture}&key=#{ENV["API_KEY"]}" %> >
   <% end %>
 </div>
 
@@ -33,9 +34,8 @@
   </div>
 <% end %>
 
-<div class="row small-3 small-centered columns" id="button" data-id="<%= @activity.id %>">
+<div class="row small-centered columns" id="button" data-id="<%= @activity.id %>">
   <%= button_to "Next Stop", zone_path(@activity.zone_id), method: :get %>
 </div>
-
-
+</div>
 </div>
