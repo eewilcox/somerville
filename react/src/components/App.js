@@ -90,7 +90,7 @@ class App extends Component {
         <h6 id="row" className="small-12 small-centered columns">
           {currentTrips}
         </h6>
-        <div id="main-button" className="small-2 small-centered columns">{button}</div>
+        <div id="main-button">{button}</div>
       </div>
     )
   }

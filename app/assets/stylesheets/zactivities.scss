@@ -6,13 +6,35 @@ Dark Purple: #524656 */
 
 body {
   background-color: #524656;
-  font-family: 'IM Fell Double Pica', serif;
+  font-family: 'Oswald', serif;
+}
+
+p {
+  font-size: 1.15rem;
+}
+
+li {
+  font-size: 1.15rem;
+}
+
+a {
+  font-size: 1rem;
+}
+
+.back-pic {
+  width: 100vw;
+  min-height: 100vh;
+  max-height: 125vh;
+  position: absolute;
+  z-index: -10000;
+  top: 0;
+  left: 0;
 }
 
 input {
   background-color: #A7C5BD;
   color: #524656;
-  font-family: 'IM Fell Double Pica', serif;
+  font-family: 'Oswald', serif;
   padding: 0.3rem;
   text-align: center;
   border-radius: 8px;
@@ -30,6 +52,7 @@ button:focus {
 
 h6 {
   font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 1.15rem;
   color: #e5ddcb;
   margin: 0.2rem 0.2rem;
   padding: 0.2rem 0.2rem;
@@ -47,20 +70,24 @@ h2 {
 
 h4 {
   color: #eb7b59;
-  font-family: 'IM Fell Double Pica', serif;
+  font-family: 'Oswald', serif;
 }
 
 .flash {
   color: #eb7b59;
-  font-family: 'IM Fell Double Pica', serif;
+  font-family: 'Oswald', serif;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .react-button {
   background-color: #cf4647;
   color: #e5ddcb;
-  font-family: 'IM Fell Double Pica', serif;
+  font-family: 'Oswald', serif;
+  font-weight: bold;
+  font-size: 1.15rem;
   margin: 0.2rem .4rem;
-  padding: 0.4rem .6rem;
+  padding: 0.5rem .6rem;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0.5px 0.5px 0.2px;
@@ -73,7 +100,7 @@ h4 {
 .charts {
   opacity: .8;
   width: 90%;
-  margin: 5rem auto;
+  margin: 1rem auto 2rem auto;
 }
 
 #go input {
@@ -94,7 +121,7 @@ h4 {
   padding: 0.1rem 1rem;
   background-color: #A7C5BD;
   color: #524656;
-  font-family: 'IM Fell Double Pica', serif;
+  font-family: 'Oswald', serif;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0.5px 0.5px 0.2px;
@@ -112,6 +139,12 @@ h4 {
   padding: 0.4rem .6rem;
   text-align: center;
   border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+#delete-from-trip a:hover{
+  background-color: #cf4647;
+  color: #e5ddcb;
   box-shadow: 0.5px 0.5px 0.2px;
 }
 
@@ -138,15 +171,20 @@ h4 {
 
 #row {
   text-align: center;
+  padding-bottom: 1rem;
 }
 
 #row2 {
   text-align: center;
 }
 
-#activity {
-  padding: 2rem 0;
+.activity {
   text-align: center;
+  background: rgba(0, 0, 0, 0.8)
+}
+
+#app {
+  background: rgba(0, 0, 0, 0.8)
 }
 
 #trip-name {
@@ -177,28 +215,79 @@ h4 {
   color: #e5ddcb;
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 1.2rem;
 }
+
+$images: ("/assets/131118_sarma-details_47.jpg", "/assets/sarma.jpg");
+
+$img: nth($images, random(length($images)));
 
 #background-img {
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-image: url("/assets/131118_sarma-details_47.jpg");
-  background-size: 1300px;
-  height: 700px;
-  padding: 5% 20%;
+  background-image: url($img);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.2);
+  height: 100vh;
+  width: 100vw;
+}
+
+.overlay2 {
+  background: rgba(0,0,0,0.2);
+  height: 125vh;
+  width: 100vw;
+}
+
+#home {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 1.5rem 0 0 0;
+}
+
+.menu {
+  background: rgba(0, 0, 0, 0.8);
+  padding: .2rem;
+  border-radius: 5px;
+  padding: 0 3rem;
+}
+
+.map {
+  height: 275px;
+}
+
+.activity-name {
+  margin-top: 2.2rem;
 }
 
 #activity-title {
-  text-decoration: underline;
   text-align: center;
 }
 #activity-list {
-  margin-bottom: 2.5rem;
-  margin-top: 1rem;
+  margin-bottom: .5rem;
   text-align: center;
 }
 
-#index {
+h6 a:hover {
+  color: #CF4647;
+}
+
+#tag {
+  color: #e5ddcb;
+  margin: .5rem 4rem;
+  padding: .8rem;
   text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+#index {
+  margin-bottom: 1rem;
+  text-align: center;
+  text-decoration: underline;
 }
