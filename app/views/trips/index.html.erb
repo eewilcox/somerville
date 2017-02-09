@@ -4,7 +4,7 @@
 
 <div class="small-6 small-centered columns">
 <% if @trips != [] %>
-  <div class="charts"><%= pie_chart @trips.joins(:activities).group('activities.name').count, title: "Are You In a Rut? - Activities Across All Your Trips", colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#524656", "#e5ddcb" ] %></div>
+  <div class="charts"><%= pie_chart @trips.joins(:activities).group('activities.name').count, title: "Destinations Across All Your Trips", colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#524656", "#e5ddcb" ] %></div>
 <% end %>
 </div>
 
