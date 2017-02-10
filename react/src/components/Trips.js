@@ -7,7 +7,7 @@ class Trips extends Component {
     super(props);
     this.state = {
       trips: [],
-      tripName: null,
+      tripName: "",
       currentTripId: null,
       userNewId: parseInt(document.getElementById('ident').dataset.id),
       page: false,
@@ -19,6 +19,7 @@ class Trips extends Component {
     this.handleNewTrip = this.handleNewTrip.bind(this);
     this.handleBoolean = this.handleBoolean.bind(this);
     this.handleBoolean2 = this.handleBoolean2.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
   }
 
   getData() {
@@ -46,6 +47,11 @@ class Trips extends Component {
 
   componentDidMount() {
     this.getData();
+  }
+
+  handleNameChange(event) {
+    let name = event.target.value;
+    this.setState({ tripName: name });
   }
 
   handleBoolean(event) {
@@ -79,7 +85,7 @@ class Trips extends Component {
   }
 
   handleNewTrip(event) {
-    let data = document.getElementById("trip-name").value;
+    let data = this.state.tripName;
     let id = this.state.userNewId;
     let activeTrip = this.state.currentTripId;
     let newData = {
@@ -152,6 +158,8 @@ class Trips extends Component {
         handleNewTrip={this.handleNewTrip}
         currentTripId={this.state.currentTripId}
         userNewId={this.state.userNewId}
+        tripName={this.state.tripName}
+        handleNameChange={this.handleNameChange}
       />
     }
 

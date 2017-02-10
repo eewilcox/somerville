@@ -18,7 +18,7 @@
   <div class="activity-description"><h5><%= @activity.description %></h5></div>
 
   <div>
-    <img src= <%= "https://maps.googleapis.com/maps/api/staticmap?center=Berkeley,CA&zoom=14&size=400x278&key=#{ENV["MAP"]}" %> >
+    <img src= <%= "https://maps.googleapis.com/maps/api/staticmap?center=#{@map}&zoom=13&size=200x150&scale=2&markers=size:small|color:0xA7C5BD|#{@map}&key=#{ENV["MAP"]}" %> >
   </div>
 
 <div class="google-results">
@@ -27,14 +27,15 @@
   <% end %>
 </div>
 
-
-<% if @place['status'] != "INVALID_REQUEST" %>
   <div class="google-results">
-    <div>Review Rating:  <%= @place['result']['rating'] %></div>
-    <div>Price Level:  <%= @place['result']['price_level'] %></div>
-    <div><a href="<%= @place['result']['website'] %>"><%= @place['result']['website'] %></a></div>
+    <div>Review Rating: <% @rating.to_i.times do %>
+      <i class="fa fa-star" aria-hidden="true"></i>
+    <% end %></div>
+    <div>Price Level: <% @price.to_i.times do %>
+      <i class="fa fa-usd" aria-hidden="true"></i>
+    <% end %></div>
+    <div><a class="official-website" href="<%= @website %>"><%= @website %></a></div>
   </div>
-<% end %>
 
 <div class="row small-centered columns" id="button" data-id="<%= @activity.id %>">
   <%= button_to "Next Stop", zone_path(@activity.zone_id), method: :get %>

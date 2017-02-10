@@ -13,8 +13,8 @@ class NewTrip extends Component {
     return(
       <div>
         <form action="zones#index" id="new-trip" className="small-11 small-centered columns">
-          <input id="trip-name" type="text" placeholder="Create a New Trip"></input>
-          <input onClick={this.props.handleNewTrip} type="submit"></input>
+          <input id="trip-name" type="text" name="tripName" placeholder="Create a New Trip" onChange={this.props.handleNameChange}/>
+          <input onClick={this.props.handleNewTrip} type="submit"/>
         </form>
       </div>
     );
