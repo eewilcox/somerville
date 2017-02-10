@@ -14,11 +14,13 @@ class ZonesController < ApplicationController
     end
     @activities = @zone.activities
     @activity = @activities.sample
-
+    @map = @activity.address.split.join("+")
     key = ENV["API_KEY"]
     if !@activity.reference.nil?
       @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
     end
-
+    @rating = @place['result']['rating']
+    @price = @place['result']['price_level']
+    @website = @place['result']['website']
   end
 end

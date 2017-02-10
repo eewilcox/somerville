@@ -9,11 +9,14 @@ class ActivitiesController < ApplicationController
     @trips = Trip.where(user_id: current_user)
     @activity = Activity.find(params[:id])
     @all_trips = Trip.all
-
+    @map = @activity.address.split.join("+")
     key = ENV["API_KEY"]
     if @activity.reference
       @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
     end
+    @rating = @place['result']['rating']
+    @price = @place['result']['price_level']
+    @website = @place['result']['website']
   end
 
   def destroy

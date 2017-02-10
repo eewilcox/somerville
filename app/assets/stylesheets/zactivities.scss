@@ -21,10 +21,18 @@ a {
   font-size: 1rem;
 }
 
+.official-website {
+  font-size: 1.2rem;
+}
+
+i {
+  padding: .1rem;
+}
+
 .back-pic {
   width: 100vw;
   min-height: 100vh;
-  max-height: 125vh;
+  max-height: 115vh;
   position: fixed;
   z-index: -10000;
   top: 0;
@@ -105,7 +113,10 @@ h4 {
 
 #go input {
   background-color: #CF4647;
+  border-radius: 5px;
   color: #e5ddcb;
+  padding: .5rem .8rem;
+  font-size: 18px;
 }
 
 #main-button {
@@ -218,7 +229,7 @@ h4 {
   font-size: 1.2rem;
 }
 
-$images: ("/assets/131118_sarma-details_47.jpg", "/assets/sarma.jpg");
+$images: ("/assets/131118_sarma-details_47.jpg", "/assets/sarma.jpg", "/assets/fish.jpg", "/assets/bench.jpg", "/assets/map.jpg");
 
 $img: nth($images, random(length($images)));
 
@@ -227,19 +238,19 @@ $img: nth($images, random(length($images)));
   background-repeat: no-repeat;
   background-image: url($img);
   background-size: cover;
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
 }
 
 .overlay {
   background: rgba(0,0,0,0.2);
-  height: 100vh;
+  height: 115vh;
   width: 100vw;
 }
 
 .overlay2 {
   background: rgba(0,0,0,0.2);
-  height: 125vh;
+  height: 115vh;
   width: 100vw;
 }
 
