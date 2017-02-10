@@ -54,6 +54,13 @@ class App extends Component {
     fetch(`/api/v1/trips/${this.state.currentTripId}`,
       { method: "PATCH",
       body: JSON.stringify(fetchBody) })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          this.setState({ alert: "Activity already added!"});
+        }
+      })
       .then(function(response) {
         newFolders = response.json();
         return newFolders;

@@ -71,6 +71,7 @@ class Trips extends Component {
 
   handleBoolean2(event) {
     event.preventDefault();
+    this.getData();
     if (this.state.page2) {
       this.setState({
         page2: false,
@@ -101,14 +102,23 @@ class Trips extends Component {
     fetch(`/api/v1/trips/`,
       { method: "POST",
       body: JSON.stringify(newData) })
-      .then(function(response) {
-        newTrips = response.json();
-        return newTrips;
-      }).then((response) =>
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          this.setState({ alert: `You already have a trip named "${this.state.tripName}"`});
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
         this.setState({
-          alert: "Created!"})
-      );
-    }
+          alert: "Created!",
+          currentTripId: body.id
+        });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
 
   handleSelectTrip(tripId) {
     fetch(`/api/v1/trips/${tripId}`, {
@@ -165,12 +175,17 @@ class Trips extends Component {
     }
 
     return(
-      <div id="tres-buttons" className="small-8 small-centered columns">
-        <h4>{this.state.alert}</h4>
-        <button className="react-button" onClick={this.handleBoolean}>Create New Trip</button>
-        <button className="react-button" onClick={this.handleBoolean2}>Select Trip to Work On</button>
-        {show}
-        {trips}
+      <div className="small-6 small-centered columns">
+        <h4 id="react-alert">{this.state.alert}</h4>
+          <div id="neighborhoods" className="row">
+            <a href="zones#index">Back to Neighborhoods</a>
+          </div>
+          <div id="tres-buttons">
+          <button className="react-button" onClick={this.handleBoolean}>Create New Trip</button>
+          <button className="react-button" onClick={this.handleBoolean2}>Select Trip to Work On</button>
+          {show}
+          {trips}
+        </div>
       </div>
     )
   }
