@@ -19,7 +19,6 @@ class ZonesController < ApplicationController
     if !@activity.reference.nil?
       @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
     end
-    binding.pry
     @rating = @place['result']['rating']
     @price = @place['result']['price_level']
     @website = @place['result']['website']
