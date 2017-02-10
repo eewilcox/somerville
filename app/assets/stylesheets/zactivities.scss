@@ -59,7 +59,7 @@ button:focus {
 }
 
 h6 {
-  font-family: 'Love Ya Like A Sister', cursive;
+  font-family: 'Oswald', serif;
   font-size: 1.15rem;
   color: #e5ddcb;
   margin: 0.2rem 0.2rem;
@@ -74,6 +74,11 @@ h1, h2, h3 {
 
 h2 {
   padding-left: 10rem;
+}
+
+h3 {
+  color: #e5ddcb;
+  font-family: 'Oswald', serif;
 }
 
 h4 {
@@ -159,8 +164,31 @@ h4 {
   box-shadow: 0.5px 0.5px 0.2px;
 }
 
+#neighborhoods {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+#neighborhoods a {
+  width: 8rem;
+  background-color: #A7C5BD;
+  color: #524656;
+  margin: 0.2rem .4rem;
+  padding: 0.4rem .6rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+#neighborhoods a:hover{
+  background-color: #cf4647;
+  color: #e5ddcb;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
 #button {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 #delete-button {
@@ -217,6 +245,10 @@ h4 {
   text-align: center;
 }
 
+#react-alert {
+  text-align: center;
+}
+
 .update {
   padding-left: 3.5rem;
   padding-bottom: 3.5rem;
@@ -255,7 +287,7 @@ $img: nth($images, random(length($images)));
 }
 
 #home {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   padding: 1.5rem 0 0 0;
 }
@@ -297,5 +329,10 @@ h6 a:hover {
 #index {
   margin-bottom: 1rem;
   text-align: center;
-  text-decoration: underline;
+  border-bottom: 2px solid #e5ddcb;
+  width: 300px;
+}
+
+#user-trips {
+  padding-left: 2rem;
 }
