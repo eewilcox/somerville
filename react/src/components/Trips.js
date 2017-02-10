@@ -85,6 +85,7 @@ class Trips extends Component {
   }
 
   handleNewTrip(event) {
+    event.preventDefault();
     let data = this.state.tripName;
     let id = this.state.userNewId;
     let activeTrip = this.state.currentTripId;
