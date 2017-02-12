@@ -6,12 +6,12 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem "chartkick"
+gem 'chartkick'
 gem 'devise'
-gem "foundation-rails"
+gem 'foundation-rails'
 gem 'carrierwave'
 gem 'fog-aws'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'rest-client'
 gem 'httparty'
 

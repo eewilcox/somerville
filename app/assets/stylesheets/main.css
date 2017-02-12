@@ -1,0 +1,118 @@
+/*
+  Green: #A7C5BD
+  Off white: #e5ddcb
+  Orange: #eb7b59
+  Red: #CF4647
+  Dark Purple: #524656
+*/
+
+body {
+  background-color: #524656;
+  font-family: 'Oswald', serif;
+  font-size: 1.15rem;
+  color: #e5ddcb
+}
+
+label {
+  color: #e5ddcb;
+}
+
+input {
+  background-color: #A7c5bd;
+  color: #524656;
+  font-family: 'Oswald', serif;
+  font-size: 1rem;
+  padding: 0.3rem;
+  text-align: center;
+  border-radius: 8px;
+  outline: 0;
+  margin-bottom: 2rem;
+}
+
+button:focus {
+  outline: 0;
+}
+
+h6 {
+  font-size: 1.15rem;
+  margin: 0.2rem 0.2rem;
+  padding: 0.2rem 0.2rem;
+  text-align: center;
+}
+
+h6 a:hover {
+  color: #Cf4647;
+}
+
+h4 {
+  color: #eb7b59;
+}
+
+h3 {
+  font-family: 'Oswald', serif;
+}
+
+h2 {
+  padding-left: 10rem;
+}
+
+h1, h2 {
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+a {
+  font-size: 1rem;
+}
+
+i {
+  padding: .1rem;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.2);
+  height: 130vh;
+  width: 100vw;
+}
+
+.menu {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 0 2.5rem;
+}
+
+.activity {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8)
+}
+
+.react-button {
+  background-color: #cf4647;
+  color: #e5ddcb;
+  font-family: 'Oswald', serif;
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin: 0.2rem 0.4rem;
+  padding: 0.5rem 0.6rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+.react-button:hover{
+  color: #524656;
+}
+
+.flash {
+  color: #eb7b59;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.update {
+  padding-left: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+#react-alert {
+  text-align: center;
+}

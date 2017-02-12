@@ -163,7 +163,8 @@ class Trips extends Component {
 
     let show;
     if (this.state.page) {
-      show = <NewTrip
+      show =
+      <NewTrip
         trips={this.state.trips}
         handleSelectTrip={this.handleSelectTrip}
         handleNewTrip={this.handleNewTrip}
@@ -176,13 +177,21 @@ class Trips extends Component {
 
     return(
       <div className="small-6 small-centered columns">
-        <h4 id="react-alert">{this.state.alert}</h4>
-          <div id="neighborhoods" className="row">
-            <a href="zones#index">Back to Neighborhoods</a>
-          </div>
-          <div id="tres-buttons">
-          <button className="react-button" onClick={this.handleBoolean}>Create New Trip</button>
-          <button className="react-button" onClick={this.handleBoolean2}>Select Trip to Work On</button>
+        <h4 id="react-alert">
+          {this.state.alert}
+        </h4>
+        <div id="neighborhoods" className="row">
+          <a href="zones#index">
+            Back to Neighborhoods
+          </a>
+        </div>
+        <div id="tres-buttons">
+          <button className="react-button" onClick={this.handleBoolean}>
+            Create New Trip
+          </button>
+          <button className="react-button" onClick={this.handleBoolean2}>
+            Select Trip to Work On
+          </button>
           {show}
           {trips}
         </div>

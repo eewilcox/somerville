@@ -1,0 +1,91 @@
+#index {
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #e5ddcb;
+  width: 300px;
+}
+
+#activity-title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#activity-list {
+  margin-bottom: .2rem;
+  text-align: center;
+}
+
+#neighborhoods {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+#neighborhoods a {
+  background-color: #a7c5bd;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #524656;
+  margin: 0.2rem .4rem;
+  padding: 0.4rem .6rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+#neighborhoods a:hover{
+  background-color: #cf4647;
+  color: #e5ddcb;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+#select-button {
+  margin: 0.1rem 0.3rem 2rem 0.1rem;
+  padding: 0.2rem;
+  color: #524656;
+  background-color: #a7c5bd;
+  box-shadow: 0.7px 0.7px 0.4px #e5ddcb;
+}
+
+#select-button:hover{
+  color: #e5ddcb;
+}
+
+#new-delete-button {
+  text-align: center;
+}
+
+#new-delete-button a {
+  font-size: 0.8rem;
+  padding: 0.1rem 1rem;
+  background-color: #a7c5bd;
+  color: #524656;
+  font-family: 'Oswald', serif;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+#trip-name {
+  background-color: #e5ddcb;
+  text-align: center;
+}
+
+#new-trip {
+  padding: 5px 5px;
+  margin: 2rem 2rem;
+  text-align: center;
+}
+
+#first-time {
+  margin-top: 100px;
+  padding: 0.3rem 0.4rem
+}
+
+#tres-buttons {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#user-trips {
+  padding-left: 2rem;
+}

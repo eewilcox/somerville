@@ -1,5 +1,5 @@
 <h1>Add Activities</h1>
-  <div class = "row">
+<div class = "row">
   <%= form_for(@activity) do |f| %>
   <div class="large-6 columns">
     <div class="field">
@@ -34,10 +34,10 @@
     </div>
   </div>
 
- <div class="actions">
+  <div class="actions">
     <%= f.submit "Add Activity"%>
- </div>
-<% end %>
+  </div>
+  <% end %>
 </div>
 
 <div>
@@ -52,6 +52,6 @@
     <% if option['photos'] %>
       <p>picture: "<%= option['photos'][0]['photo_reference'] %>",</p>
     <% end %>
-      <p>zone_id: 3},</p>
+      <p>zone_id: 1},</p>
   <% end %>
 </div>
