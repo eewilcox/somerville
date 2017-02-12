@@ -1,21 +1,35 @@
-<h1 id="user-trips"><%= current_user.username %>'s Trips</h1>
+<h1 id="user-trips">
+  <%= current_user.username %>'s Trips
+</h1>
 
 <div id="my-trips"></div>
 
 <div class="small-6 small-centered columns">
-<% if @trips != [] %>
-  <div class="charts"><%= pie_chart @trips.joins(:activities).group('activities.name').count, title: "Destinations Across All Your Trips", library: {backgroundColor: 'transparent', fontSize: 12, fontName: 'Oswald', forcelFrame: true, titleTextStyle: { color: "#e5ddcb", fontSize: 18, bold: true }, legend: { textStyle: { color: "#e5ddcb", fontSize: 16 }}}, colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#86728C", "#e5ddcb" ] %></div>
-<% end %>
+  <% if @trips != [] %>
+    <div class="charts">
+      <%= pie_chart @trips.joins(:activities).group('activities.name').count, title: "Destinations Across All Your Trips", library: {backgroundColor: 'transparent', fontSize: 12, fontName: 'Oswald', forcelFrame: true, titleTextStyle: { color: "#e5ddcb", fontSize: 18, bold: true }, legend: { textStyle: { color: "#e5ddcb", fontSize: 16 }}}, colors: ["#A7C5BD", "#eb7b59", "#CF4647", "#86728C", "#e5ddcb" ] %>
+    </div>
+  <% end %>
 </div>
 
-<h3 class="small-6 small-centered columns" id="index">Past Trips</h3>
+<h3 class="small-6 small-centered columns" id="index">
+  Past Trips
+</h3>
 
 <% @trips.each do |trip| %>
-  <h6 id="activity-title"class="small-6 small-centered columns"><%= trip.trip_name %></h6>
+  <h6 id="activity-title"class="small-6 small-centered columns">
+    <%= trip.trip_name %>
+  </h6>
 
-  <h6 id="activity-list" class="row small-10 small-centered columns"><% trip.activities.each do |activity| %>
-    <a href="/activities/<%= activity['id'] %>"><%= activity['name'] %>     -----</a>
-    <% end %></h6>
+  <h6 id="activity-list" class="row small-10 small-centered columns">
+    <% trip.activities.each do |activity| %>
+      <a href="/activities/<%= activity['id'] %>">
+        <%= activity['name'] %>     -----
+      </a>
+    <% end %>
+  </h6>
 
-  <div class="small-3 small-centered columns" id="new-delete-button"><%= link_to "Delete", trip_path(trip.id), method: :delete, data: {confirm: "Are you sure?"} %></div>
+  <div class="small-3 small-centered columns" id="new-delete-button">
+    <%= link_to "Delete", trip_path(trip.id), method: :delete, data: {confirm: "Are you sure?"} %>
+  </div>
 <% end %>

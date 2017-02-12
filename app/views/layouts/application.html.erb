@@ -13,30 +13,29 @@
 </head>
 
 <body>
-
-    <div class="top-bar-right">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li>
-          <a href="#">Menu</a>
-          <ul class="menu vertical">
-          <% if user_signed_in? %>
-            <li id="ident" data-id="<%= current_user.id %>"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to 'Change My User Info', edit_user_registration_path %></li>
-              <% if current_user.admin? %>
-                <li><%= link_to "Admin Activity Create", new_activity_path %></li>
-                <li><%= link_to "Admin Activity Index", activities_path %></li>
-              <% end %>
-          <%else%>
-            <li id="ident" data-id="<%= nil %>"><%= link_to 'Sign Up', new_user_registration_path%></li>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <% end %>
-            <li><%= link_to 'Create a New Trip', trips_path %></li>
-            <li><%= link_to 'Manage Trips', trips_path %></li>
-            <li><%= link_to 'Back to Neighborhoods', root_path %></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+  <div class="top-bar-right">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li>
+        <a href="#">Menu</a>
+        <ul class="menu vertical">
+        <% if user_signed_in? %>
+          <li id="ident" data-id="<%= current_user.id %>"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to 'Change My User Info', edit_user_registration_path %></li>
+            <% if current_user.admin? %>
+              <li><%= link_to "Admin Activity Create", new_activity_path %></li>
+              <li><%= link_to "Admin Activity Index", activities_path %></li>
+            <% end %>
+        <%else%>
+          <li id="ident" data-id="<%= nil %>"><%= link_to 'Sign Up', new_user_registration_path%></li>
+          <li><%= link_to 'Sign In', new_user_session_path %></li>
+        <% end %>
+          <li><%= link_to 'Create a New Trip', trips_path %></li>
+          <li><%= link_to 'Manage Trips', trips_path %></li>
+          <li><%= link_to 'Back to Neighborhoods', root_path %></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
 
   <h4 class="flash">
@@ -45,7 +44,7 @@
    <% end %>
  </h4>
 
-<%= yield %>
+ <%= yield %>
 
 </body>
 </html>

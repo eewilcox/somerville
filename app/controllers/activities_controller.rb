@@ -1,24 +1,20 @@
 class ActivitiesController < ApplicationController
   before_action :authorize_user, except: [:destroy, :show]
 
-  def index
-    @activities = Activity.all
-  end
-
   def show
     @trips = Trip.where(user_id: current_user)
     @activity = Activity.find(params[:id])
-    @all_trips = Trip.all
     @map = @activity.address.split.join("+")
     key = ENV["API_KEY"]
     if @activity.reference
       @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
     end
 
-    @rating = @place['result']['rating']
-    @price = @place['result']['price_level']
-    @website = @place['result']['website']
-
+    if !@place['result'].nil?
+      @rating = @place['result']['rating']
+      @price = @place['result']['price_level']
+      @website = @place['result']['website']
+    end
   end
 
   def destroy
@@ -33,7 +29,7 @@ class ActivitiesController < ApplicationController
     @trip_activity = TripActivity.where("trip_id=? and activity_id=?", @the_trip.id, @activity.id)
     if @trip_activity[0]
       @trip_activity[0].destroy
-      redirect_to @activity
+      redirect_to zone_path(@activity.zone_id)
     else
       flash[:notice] = "This activity is not in your current trip!"
       redirect_to @activity
@@ -44,9 +40,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
 
     key = ENV["API_KEY"]
-    @options = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+Somerville+02143&key=#{key}")
-    # @client = GooglePlaces::Client.new(ENV['API_KEY'])
-    # @google_info = @client.spots_by_query('Restaurants near 02144')
+    @options = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=stores+Somerville+02143&key=#{key}")
   end
 
   def create
