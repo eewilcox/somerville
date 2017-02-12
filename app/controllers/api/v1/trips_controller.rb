@@ -19,12 +19,6 @@ class Api::V1::TripsController < ApplicationController
   def create
     data = JSON.parse(request.body.read)
 
-    if data["trip"]["activeTrip"]
-      former_trip = Trip.find(data["trip"]["activeTrip"])
-      former_trip.current = false
-      former_trip.save!
-    end
-
     trip = Trip.new
     trip.trip_name = data["trip"]["trip_name"]
     trip.user_id = data["trip"]["user_id"]
@@ -32,6 +26,14 @@ class Api::V1::TripsController < ApplicationController
     if trip.save!
       render json: trip
     end
+
+    if data["trip"]["activeTrip"] && data["trip"]["activeTrip"] != trip.id
+      former_trip = Trip.find(data["trip"]["activeTrip"])
+      former_trip.current = false
+      former_trip.save!
+    end
+
+
   end
 
   def show
