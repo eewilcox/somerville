@@ -1,0 +1,69 @@
+.official-website {
+  font-size: 1.2rem;
+}
+
+.back-pic {
+  width: 100vw;
+  min-height: 100vh;
+  max-height: 115vh;
+  position: fixed;
+  z-index: -10000;
+  top: 0;
+  left: 0;
+}
+
+.google-results {
+  color: #e5ddcb;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.activity-name {
+  margin-top: 2.2rem;
+}
+
+#main-button {
+  text-align: center;
+}
+
+#delete-from-trip {
+  margin-top: 1.5rem;
+}
+
+#delete-from-trip a {
+  width: 8rem;
+  background-color: #a7c5bd;
+  color: #524656;
+  margin: 0.2rem .4rem;
+  padding: 0.4rem .6rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+#delete-from-trip a:hover{
+  background-color: #cf4647;
+  color: #e5ddcb;
+  box-shadow: 0.5px 0.5px 0.2px;
+}
+
+#button {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#row {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+#row2 {
+  text-align: center;
+}
+
+#app {
+  background: rgba(0, 0, 0, 0.8)
+}

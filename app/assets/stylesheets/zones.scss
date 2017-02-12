@@ -1,0 +1,41 @@
+$images: ("/assets/131118_sarma-details_47.jpg", "/assets/sarma.jpg", "/assets/fish.jpg", "/assets/bench.jpg", "/assets/map.jpg");
+
+$img: nth($images, random(length($images)));
+
+#background-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url($img);
+  background-size: cover;
+  height: 105vh;
+  width: 100vw;
+}
+
+#tag {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: #e5ddcb;
+  margin: .5rem 4rem;
+  padding: 0.8rem;
+  text-align: center;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+#home {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 1.5rem 0 0 0;
+}
+
+#go input {
+  background-color: #CF4647;
+  border-radius: 5px;
+  color: #e5ddcb;
+  padding: .5rem .8rem;
+  font-size: 18px;
+}
+
+.charts {
+  opacity: 0.9;
+  width: 95%;
+}
