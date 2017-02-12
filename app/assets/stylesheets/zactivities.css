@@ -4,8 +4,8 @@
 
 .back-pic {
   width: 100vw;
+  max-height: 105vh;
   min-height: 100vh;
-  max-height: 115vh;
   position: fixed;
   z-index: -10000;
   top: 0;

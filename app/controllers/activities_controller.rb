@@ -40,7 +40,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
 
     key = ENV["API_KEY"]
-    @options = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=stores+Somerville+02143&key=#{key}")
+    @options = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=bakery+Somerville+02145&key=#{key}")
   end
 
   def create
