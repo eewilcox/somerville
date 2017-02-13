@@ -23,7 +23,7 @@ I utilized React to give users a smooth and seamless experience when creating tr
 * Creating, updating, and selecting trips
 * Adding or deleting activities from trips
 * Maps that show the location of the activity
-* Rating and price-levels for the activities
+* Rating and price levels for the activities
 * Graphs showing the frequency an activity is added across a user's trips
 
 
