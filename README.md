@@ -43,6 +43,7 @@ I utilized React to give users a smooth and seamless experience when creating tr
 ## To-Do List
 
 * Make the front end entirely in React.js utilizing React Router
+* Write React tests and use VCR for API testing
 
 ## Contributing
 
