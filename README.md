@@ -30,7 +30,7 @@ I utilized React to give users a smooth and seamless experience when creating tr
 ## Technologies
 
 * Ruby on Rails
-* ReactJS
+* React.js
 * PostgreSQL
 * Google Places API
 * Google Maps API
