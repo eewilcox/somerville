@@ -30,7 +30,6 @@ group :development, :test do
   gem 'groupdate'
   gem 'dotenv-rails'
   gem 'database_cleaner'
-
 end
 
 group :production do
