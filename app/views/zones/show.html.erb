@@ -1,16 +1,16 @@
 <div class="overlay">
-  <div class="row small-7 columns" id="app">
+  <div class="row small-11 medium-7 columns" id="app">
     <% @trips.each do |trip| %>
       <% if trip.current %>
-        <h6 class="small-7 small-centered columns">Current Trip: <%= trip.trip_name %></h6>
-        <h6 class="row small-7 small-centered columns"><% trip.activities.each do |activity| %>
+        <h6 class="small-11 medium-7 small-centered columns">Current Trip: <%= trip.trip_name %></h6>
+        <h6 class="row small-11 medium-7 small-centered columns"><% trip.activities.each do |activity| %>
           <%= activity['name'] %>     -----
           <% end %></h6>
         <% end %>
     <% end %>
   </div>
 
-  <div class="activity row small-7 small-centered columns">
+  <div class="activity row small-11 medium-7 small-centered columns">
     <div class="activity-name">
       <h1><%= @activity.name %></h1>
     </div>
