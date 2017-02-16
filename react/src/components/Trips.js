@@ -176,7 +176,7 @@ class Trips extends Component {
     }
 
     return(
-      <div className="small-6 small-centered columns">
+      <div className="small-12 medium-6 small-centered columns">
         <h4 id="react-alert">
           {this.state.alert}
         </h4>
