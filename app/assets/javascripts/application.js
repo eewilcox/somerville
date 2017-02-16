@@ -16,4 +16,5 @@
 //= require_tree .
 //= require chartkick
 
+
 $(function(){ $(document).foundation(); });
