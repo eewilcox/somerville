@@ -13,4 +13,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :alexa do
+      resource :handler, only: [:show]
+    end
+  end
+
 end
