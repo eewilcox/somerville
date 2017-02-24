@@ -14,37 +14,46 @@
     <%= link_to "Delete from Trip", @activity, method: :delete %>
   </div>
 
-  <div>
-    <div class="activity-name"><h1><%= @activity.name %></h1></div>
-    <div class="activity-address"><h6><%= @activity.address %></h6></div>
-    <div class="activity-description"><h5><%= @activity.description %></h5></div>
-  </div>
+  <div class="activity row small-11 medium-7 small-centered columns">
+    <div class="activity-name">
+      <h1><%= @activity.name %></h1>
+    </div>
+    <div class="activity-address">
+      <h6><%= @activity.address %></h6>
+    </div>
+    <div class="activity-description">
+      <h5><%= @activity.description %></h5>
+    </div>
 
-  <div>
-    <img src= <%= "https://maps.googleapis.com/maps/api/staticmap?center=#{@map}&zoom=13&size=200x150&scale=2&markers=size:small|color:0xA7C5BD|#{@map}&key=#{ENV["MAP"]}" %> >
-  </div>
+    <div>
+      <img src= <%= @new_map %> >
+    </div>
 
   <div class="google-results">
     <% if @activity.picture %>
-      <img class="back-pic" src= <%= "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1300&photoreference=#{@activity.picture}&key=#{ENV["API_KEY"]}" %> >
+      <img class="back-pic" src= <%= @new_pic %> >
     <% end %>
   </div>
 
-  <div class="google-results">
-    <div>
-      Review Rating: <% @rating.to_i.times do %>
-        <i class="fa fa-star" aria-hidden="true"></i>
-      <% end %>
+    <div class="google-results">
+      <div>
+        Review Rating: <% @rating.to_i.times do %>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        <% end %>
+      </div>
+      <div>
+        <% if !@price.nil? %>
+          Price Level: <% @price.to_i.times do %>
+            <i class="fa fa-usd" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div>
+        <a class="official-website" href="<%= @website %>">
+          <%= @website %>
+        </a>
+      </div>
     </div>
-    <div>
-      Price Level: <% @price.to_i.times do %>
-        <i class="fa fa-usd" aria-hidden="true"></i>
-      <% end %>
-    </div>
-    <div>
-      <a class="official-website" href="<%= @website %>"><%= @website %></a>
-    </div>
-  </div>
 
   <div class="row small-centered columns" id="button" data-id="<%= @activity.id %>">
     <%= button_to "Next Stop", zone_path(@activity.zone_id), method: :get %>

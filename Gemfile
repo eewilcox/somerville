@@ -30,6 +30,7 @@ group :development, :test do
   gem 'groupdate'
   gem 'dotenv-rails'
   gem 'database_cleaner'
+  gem 'webmock'
 end
 
 group :production do
@@ -40,4 +41,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :test do
   gem 'coveralls', require: false
+  gem 'vcr'
 end

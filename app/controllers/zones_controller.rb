@@ -16,9 +16,8 @@ class ZonesController < ApplicationController
     @activity = @activities.sample
     @map = @activity.address.split.join("+")
 
-    key = ENV["API_KEY"]
     if !@activity.reference.nil?
-      @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
+      @place = Place.get_info(@activity.reference)
     end
 
     if !@place['result'].nil?
@@ -27,5 +26,7 @@ class ZonesController < ApplicationController
       @website = @place['result']['website']
     end
 
+    @new_map = Place.get_map(@map)
+    @new_pic = Place.get_pic(@activity.picture)
   end
 end

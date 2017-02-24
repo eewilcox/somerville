@@ -5,9 +5,8 @@ class ActivitiesController < ApplicationController
     @trips = Trip.where(user_id: current_user)
     @activity = Activity.find(params[:id])
     @map = @activity.address.split.join("+")
-    key = ENV["API_KEY"]
-    if @activity.reference
-      @place = HTTParty.get("https://maps.googleapis.com/maps/api/place/details/json?placeid=#{@activity.reference}&key=#{key}")
+    if !@activity.reference.nil?
+      @place = Place.get_info(@activity.reference)
     end
 
     if !@place['result'].nil?
@@ -15,6 +14,9 @@ class ActivitiesController < ApplicationController
       @price = @place['result']['price_level']
       @website = @place['result']['website']
     end
+
+    @new_map = Place.get_map(@map)
+    @new_pic = Place.get_pic(@activity.picture)
   end
 
   def destroy
