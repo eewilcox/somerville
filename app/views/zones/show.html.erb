@@ -1,13 +1,5 @@
 <div class="overlay">
-  <div class="row small-11 medium-7 columns" id="app">
-    <% @trips.each do |trip| %>
-      <% if trip.current %>
-        <h6 class="small-11 medium-7 small-centered columns">Current Trip: <%= trip.trip_name %></h6>
-        <h6 class="row small-11 medium-7 small-centered columns"><% trip.activities.each do |activity| %>
-          <%= activity['name'] %>     -----
-          <% end %></h6>
-        <% end %>
-    <% end %>
+  <div class="activity row small-11 medium-7 columns" id="app">
   </div>
 
   <div class="activity row small-11 medium-7 small-centered columns">
@@ -25,11 +17,11 @@
       <img src= <%= @new_map %> >
     </div>
 
-  <div class="google-results">
-    <% if @activity.picture %>
-      <img class="back-pic" src= <%= @new_pic %> >
-    <% end %>
-  </div>
+    <div class="google-results">
+      <% if @activity.picture %>
+        <img class="back-pic" src= <%= @new_pic %> >
+      <% end %>
+    </div>
 
     <div class="google-results">
       <div>

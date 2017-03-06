@@ -113,7 +113,8 @@ class Trips extends Component {
       .then(body => {
         this.setState({
           alert: "Created!",
-          currentTripId: body.id
+          currentTripId: body.id,
+          page: false
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -137,7 +138,10 @@ class Trips extends Component {
           tripName: data.trip_name,
         });
       }).then(p  => {
-        this.setState({alert: `${this.state.tripName} Selected!`});
+        this.setState({
+          alert: `${this.state.tripName} Selected!`,
+          page2: false
+        });
       });
   }
 

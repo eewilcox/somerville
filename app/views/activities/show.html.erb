@@ -1,62 +1,60 @@
-<div class="activity small-8 columns">
-
-  <% @trips.each do |trip| %>
-    <% if trip.current %>
-      <h6><%= trip.trip_name %></h6>
-      <h6><% trip.activities.each do |activity| %>
-        <a href="/activities/<%= activity['id'] %>"><%= activity['name'] %>     -----</a>
-        <% end %></h6>
-      <% end %>
-  <% end %>
-
-
-  <div id="delete-from-trip" class="row small-center columns">
-    <%= link_to "Delete from Trip", @activity, method: :delete %>
-  </div>
-
-  <div class="activity row small-11 medium-7 small-centered columns">
-    <div class="activity-name">
-      <h1><%= @activity.name %></h1>
+<div class="overlay">
+  <div class="activity row small-11 medium-7 columns">
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <button class="menu-icon" type="button" data-open="my-notes"></button>
+        <span class="title-bar-title">Notes</span>
+      </div>
     </div>
-    <div class="activity-address">
-      <h6><%= @activity.address %></h6>
-    </div>
-    <div class="activity-description">
-      <h5><%= @activity.description %></h5>
-    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
 
-    <div>
-      <img src= <%= @new_map %> >
-    </div>
+      <div id="app"></div>
 
-  <div class="google-results">
-    <% if @activity.picture %>
-      <img class="back-pic" src= <%= @new_pic %> >
-    <% end %>
-  </div>
+      <div class="activity-name">
+        <h1><%= @activity.name %></h1>
+      </div>
+      <div class="activity-address">
+        <h6><%= @activity.address %></h6>
+      </div>
+      <div class="activity-description">
+        <h5><%= @activity.description %></h5>
+      </div>
 
-    <div class="google-results">
       <div>
-        Review Rating: <% @rating.to_i.times do %>
-          <i class="fa fa-star" aria-hidden="true"></i>
+        <img src= <%= @new_map %> >
+      </div>
+
+      <div class="google-results">
+        <% if @activity.picture %>
+          <img class="back-pic" src= <%= @new_pic %> >
         <% end %>
       </div>
-      <div>
-        <% if !@price.nil? %>
-          Price Level: <% @price.to_i.times do %>
-            <i class="fa fa-usd" aria-hidden="true"></i>
+
+      <div class="google-results">
+        <div>
+          Review Rating: <% @rating.to_i.times do %>
+            <i class="fa fa-star" aria-hidden="true"></i>
           <% end %>
-        <% end %>
+        </div>
+        <div>
+          <% if !@price.nil? %>
+            Price Level: <% @price.to_i.times do %>
+              <i class="fa fa-usd" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div>
+          <a class="official-website" href="<%= @website %>">
+            <%= @website %>
+          </a>
+        </div>
       </div>
-      <div>
-        <a class="official-website" href="<%= @website %>">
-          <%= @website %>
-        </a>
+
+      <div class="row small-centered columns" id="button" data-id="<%= @activity.id %>">
+        <%= button_to "Next Stop", zone_path(@activity.zone_id), method: :get %>
       </div>
     </div>
-
-  <div class="row small-centered columns" id="button" data-id="<%= @activity.id %>">
-    <%= button_to "Next Stop", zone_path(@activity.zone_id), method: :get %>
   </div>
-
 </div>
+
+<div class="off-canvas position-right" data-off-canvas id="my-notes"></div>
