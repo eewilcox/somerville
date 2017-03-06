@@ -12,6 +12,17 @@
   left: 0;
 }
 
+.title-bar {
+  background: none;
+}
+
+.title-bar-left {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: .3rem 2.5rem;
+  font-size: 1rem;
+}
+
 .google-results {
   color: #e5ddcb;
   text-align: center;
@@ -64,6 +75,18 @@
   text-align: center;
 }
 
-#app {
-  background: rgba(0, 0, 0, 0.8)
+/*#app {
+  background: rgba(0, 0, 0, 0.8);
+}*/
+
+#note {
+  height: 20rem;
+}
+
+#note-text {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 2rem;
+  padding: 1rem;
+  word-wrap: break-word;
 }

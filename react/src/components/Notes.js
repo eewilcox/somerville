@@ -17,6 +17,7 @@ class Notes extends Component {
     this.addNote = this.addNote.bind(this);
     this.getBody = this.getBody.bind(this);
     this.showHide = this.showHide.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   getBody(event) {
@@ -40,7 +41,8 @@ class Notes extends Component {
       .then(response => response.json())
       .then(body => {
         this.setState({
-          noteBody: body.note_body,
+          noteBody: body.body,
+          noteId: body.id
         });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -51,7 +53,6 @@ class Notes extends Component {
   }
 
   showHide(event) {
-    this.getNote();
     event.preventDefault();
     if (this.state.page) {
       this.setState({
@@ -66,32 +67,55 @@ class Notes extends Component {
 
   addNote(event) {
     event.preventDefault();
-    let newData = {
-      "note": {
-        "activity_id": this.state.activityId,
-        "user_id": this.state.userId,
-        "body": this.state.noteBody
-      }
-    };
-
-    fetch(`/api/v1/activities/${this.state.activityId}/notes`,
-      { method: "POST",
-      body: JSON.stringify(newData) })
-      .then(response => {
-        if (response.ok) {
-          return response;
+    if (this.state.noteId === undefined || this.state.noteId === null) {
+      let newData = {
+        "note": {
+          "activity_id": this.state.activityId,
+          "user_id": this.state.userId,
+          "body": this.state.noteBody
         }
-      })
-      .then(response => response.json())
-      .then(body => {
-        this.setState({
-          noteId: body.id,
-        });
-      })
-      .catch(error => console.error(`Error in fetch: ${error.message}`));
+      };
+
+      fetch(`/api/v1/activities/${this.state.activityId}/notes`,
+        { method: "POST",
+        body: JSON.stringify(newData) })
+        .then(response => {
+          if (response.ok) {
+            return response;
+          }
+        })
+        .then(response => response.json())
+        .then((body) => {
+          this.setState({ noteId: body.id });
+        }, this.setState({page: false}))
+        .catch(error => console.error(`Error in fetch: ${error.message}`));
+    } else {
+      let fetchBody = { body: this.state.noteBody };
+      let updatedNotes;
+      fetch(`/api/v1/activities/${this.state.activityId}/notes/${this.state.noteId}`,
+        { method: "PATCH",
+        body: JSON.stringify(fetchBody) })
+        .then(function(response) {
+          updatedNotes = response.json();
+          return updatedNotes;
+        }).then((response) => this.setState({page: false })
+      );
+    }
   }
 
-
+  handleDelete(event){
+    event.preventDefault();
+    let noteArray = [];
+    fetch(`/api/v1/activities/${this.state.activityId}/notes/${this.state.noteId}`,
+      { method: "DELETE"
+      }).then(function(response) {
+          noteArray = response.json();
+          return noteArray;
+      }).then((response) => this.setState({noteBody: "" }),
+                            this.setState({page: false }),
+                            this.setState({noteId: null })
+    );
+  }
 
   render() {
     let show;
@@ -100,9 +124,10 @@ class Notes extends Component {
       <Note
         id={this.state.noteId}
         key={this.state.noteId}
-        body={this.state.noteBody}
         getBody={this.getBody}
         addNote={this.addNote}
+        noteBody={this.state.noteBody}
+        handleDelete={this.handleDelete}
       />
     }
 
@@ -113,6 +138,7 @@ class Notes extends Component {
           Add Note
         </button>
         {show}
+        <p id="note-text">{this.state.noteBody}</p>
       </div>
     )
   }

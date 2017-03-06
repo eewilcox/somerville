@@ -4,10 +4,10 @@ const Note = (props) => {
   return(
     <div>
       <form action="zones#index" className="small-11 small-centered columns">
-        <input type="text" name="tripName" placeholder="Create a Note" onChange={props.getBody}/>
-        <input onClick={props.addNote} type="submit"/>
+        <textarea id="note" type="text" name="tripName" placeholder="Leave a note" defaultValue={`${props.noteBody}`} onChange={props.getBody}/>
+        <input className="react-button" onClick={props.addNote} type="submit"/>
+        <button id="delete" className="react-button" onClick={props.handleDelete}>Delete</button>
       </form>
-      {props.body}
     </div>
   )
 }

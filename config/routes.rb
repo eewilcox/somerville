@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :trips, only: [:index, :create, :show, :update]
       resources :activities, only: [] do
-        resources :notes, only: [:index, :create]
+        resources :notes, only: [:index, :create, :update, :destroy]
       end
     end
   end

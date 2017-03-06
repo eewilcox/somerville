@@ -4,4 +4,5 @@ class Note < ApplicationRecord
 
   validates :user, presence: true
   validates :activity, presence: true
+  validates :user, uniqueness: { scope: :activity }
 end
