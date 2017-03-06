@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207170223) do
+ActiveRecord::Schema.define(version: 20170301173857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20170207170223) do
     t.string  "picture"
     t.string  "reference"
     t.index ["zone_id"], name: "index_activities_on_zone_id", using: :btree
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text    "body",        null: false
+    t.integer "user_id"
+    t.integer "activity_id"
+    t.index ["activity_id"], name: "index_notes_on_activity_id", using: :btree
+    t.index ["user_id"], name: "index_notes_on_user_id", using: :btree
   end
 
   create_table "trip_activities", force: :cascade do |t|
@@ -68,4 +76,6 @@ ActiveRecord::Schema.define(version: 20170207170223) do
     t.string "name", null: false
   end
 
+  add_foreign_key "notes", "activities"
+  add_foreign_key "notes", "users"
 end

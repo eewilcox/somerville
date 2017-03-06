@@ -93,7 +93,7 @@ class App extends Component {
     }
     return(
       <div>
-        <h6 id="row2" className="small-12 medium-3 small-centered columns">
+        <h6 id="row2" className="small-12 medium-8 small-centered columns">
           {this.state.tripName}
         </h6>
         <h6 id="row" className="small-12 small-centered columns">

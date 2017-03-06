@@ -2,6 +2,8 @@ class Activity < ApplicationRecord
   belongs_to :zone
   has_many :trip_activities
   has_many :trips, through: :trip_activities
+  has_many :notes
+  has_many :users, through: :notes
 
   validates :name, presence: true
   validates :name, uniqueness: true
