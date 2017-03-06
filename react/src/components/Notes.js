@@ -131,14 +131,19 @@ class Notes extends Component {
       />
     }
 
+    let body;
+    if (this.state.noteBody !== "") {
+      body = <p id="note-text">{this.state.noteBody}</p>
+    }
+
 
     return(
       <div>
         <button className="react-button" onClick={this.showHide}>
-          Add Note
+          Notes
         </button>
         {show}
-        <p id="note-text">{this.state.noteBody}</p>
+        {body}
       </div>
     )
   }
