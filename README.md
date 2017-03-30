@@ -39,9 +39,3 @@ I utilized React to give users a smooth and seamless experience when creating tr
 
 * Make the front end entirely in React.js utilizing React Router
 * Write React tests and use VCR for API testing
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/eewilcox/somerville. Use the [fork-and-branch](http://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) workflow to contribute.
-
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
