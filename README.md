@@ -5,9 +5,9 @@
 
 Heroku Link: http://somerville.herokuapp.com/
 
-A personalized tourism site for the city of Somerville where users can explore and plan activities based on neighborhood. If signed in, a user has access to a trip dashboard. Users can select a neighborhood and are randomly given activities which they can choose to add to a trip.  
+A personalized tourism site for the city of Somerville where users can explore and plan activities based on neighborhood. If signed in, a user has access to a trip dashboard. Users can select a neighborhood and are randomly given activities which they can choose to add to a trip. Users can also create and save notes to activities.
 
-I utilized React to give users a smooth and seamless experience when creating trips, adding activities to trips, and selecting former trips to continue working on. In addition, I used Google Places API, Google Maps API, and Google Charts for information and data visualization that shows the usage percentage of a specific activity added across a user's trips.
+I utilized React to give users a smooth and seamless experience when creating trips, adding activities to trips, and selecting former trips to continue working on. In addition, I used Google Places API, Google Maps API, and Google Charts for information and data visualization that shows the usage percentage of a specific activity added across a user's trips. An Alexa skill has also been integrated.
 
 ![Somerville](pic.png)
 
@@ -20,6 +20,7 @@ I utilized React to give users a smooth and seamless experience when creating tr
 * Maps that show the location of the activity
 * Rating and price levels for the activities
 * Graphs showing the frequency an activity is added across a user's trips
+* Integrated Alexa skill: "Somerville Guide"
 
 
 ## Technologies
@@ -27,6 +28,7 @@ I utilized React to give users a smooth and seamless experience when creating tr
 * Ruby on Rails
 * React.js
 * PostgreSQL
+* Alexa
 * Google Places API
 * Google Maps API
 * Google Charts
@@ -34,8 +36,9 @@ I utilized React to give users a smooth and seamless experience when creating tr
 * Foundation
 * RSpec
 * Capybara
+* VCR
 
 ## To-Do List
 
 * Make the front end entirely in React.js utilizing React Router
-* Write React tests and use VCR for API testing
+* Write React tests
