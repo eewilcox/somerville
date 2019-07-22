@@ -868,6 +868,9 @@ zone_id: 3}
 
 ]
 
+Zone.new(name: 'East Somerville').save
+Zone.new(name: 'West Somerville').save
+Zone.new(name: 'South Somerville').save
 
 seeds.each do |activity_params|
        activity = Activity.new
