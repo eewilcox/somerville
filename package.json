@@ -16,7 +16,7 @@
     "enzyme": "2.3.0",
     "jasmine-core": "2.4.1",
     "jasmine-enzyme": "1.0.0",
-    "karma": "^4.2.0",
+    "karma": "^6.4.1",
     "karma-jasmine": "0.3.8",
     "karma-json-fixtures-preprocessor": "0.0.6",
     "karma-phantomjs-launcher": "1.0.0",
